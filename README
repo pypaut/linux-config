@@ -1,0 +1,4 @@
+
+config          : .conf/i3/
+.vimrc          : ~/
+.xinitrc        : ~/
