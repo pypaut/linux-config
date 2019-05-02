@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 7
+font pango:System San Francisco Display 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -160,6 +160,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# color variables
+set $bg-color 	         #00054e
+set $inactive-bg-color   #1c1c1c
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -196,5 +211,5 @@ exec_always --no-startup-id source ~/.xinitrc
 #gaps outer <10>
 
 # Ricing
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 exec_always feh --bg-fill ~/Pictures/space01.jpg
