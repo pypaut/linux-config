@@ -189,11 +189,12 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Key mapping
-exec --no-startup-id source ~/.xinitrc
-
+exec_always --no-startup-id source ~/.xinitrc
 
 # Gaps
 #gaps inner <10>
 #gaps outer <10>
 
+# Ricing
 for_window [class="^.*"] border pixel 1
+exec_always feh --bg-fill ~/Pictures/space01.jpg
