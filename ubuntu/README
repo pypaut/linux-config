@@ -1,6 +1,3 @@
-
 config          : ~/.config/i3/
-.vimrc          : ~/
 .xinitrc        : ~/
 .fonts/         : ~/
-init.vim        : ~/.config/nvim/
