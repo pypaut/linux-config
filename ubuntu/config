@@ -228,6 +228,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Key mapping
 exec_always source ~/.xinitrc
+bindsym $mod+Shift+s exec --no-startup-id ~/Documents/monitor.sh
 
 # Gaps
 #gaps inner <10>
