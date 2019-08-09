@@ -117,4 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 #aliases
-glog='git log --oneline'
+alias glog='git log --oneline'
