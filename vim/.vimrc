@@ -24,3 +24,6 @@ match ExtraWhitespace /\s\+$/
 
 set list
 set listchars=tab:>-
+
+" Ctrl + n to comment selected lines with v
+map <C-n> :norm i# <Return>
