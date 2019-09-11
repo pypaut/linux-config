@@ -10,7 +10,6 @@ let g:netrw_banner = 0
 syntax on
 set expandtab
 
-"set textwidth=79
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -19,11 +18,12 @@ set autoindent
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-" color dracula
-" color minimalist
 
 set list
 set listchars=tab:>-
+
+
+" ### KEY BINDINGS ###
 
 " Ctrl + n to comment selected lines with v
 map <C-n> :norm i# <Return>
