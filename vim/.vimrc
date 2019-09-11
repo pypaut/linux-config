@@ -16,6 +16,12 @@ set shiftwidth=4
 set shiftround
 set autoindent
 
+" SEARCH OPTIONS
+set ignorecase
+set smartcase " case sensitive only if uppercase
+set incsearch
+
+" TRAILING SPACES
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
