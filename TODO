@@ -1,0 +1,7 @@
+##################
+### VIM / NVIM ###
+##################
+
+[ ] - Auto comment selected zones with `Ctrl + /` (cf Atom)
+[ ] - Highlight & find while typing search with /
+[ ] - Add doc/better comments
