@@ -1,7 +1,23 @@
+###############
+### GENERAL ###
+###############
+
+[ ] - script to setup a full PC with personal config
+
+
 ##################
 ### VIM / NVIM ###
 ##################
 
-[ ] - Auto comment selected zones with `Ctrl + /` (cf Atom)
-[ ] - Highlight & find while typing search with /
-[ ] - Add doc/better comments
+[X] - Auto comment selected zones with `Ctrl + /` (cf Atom)
+[X] - Highlight & find while typing search with /
+[/] - Add doc/better comments
+
+
+##########
+### i3 ###
+##########
+
+[ ] - better i3 bar (see nm-applet)
+[ ] - sound/brightness buttons
+[ ] - battery alarm
