@@ -234,7 +234,6 @@ bindsym $mod+Shift+s exec --no-startup-id ~/Documents/monitor.sh
 # Ricing
 for_window [class="^.*"] border pixel 3
 exec_always feh --bg-fill ~/Pictures/cyberlife01.png
-exec --no-startup-id i3-battery-popup
 
 # Gaps
 
