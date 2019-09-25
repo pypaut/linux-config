@@ -25,6 +25,11 @@
 
 [ ] - custom noises (with toggle pls)
 
+[ ] - Terminal
+    [ ] - check zsh with oh-my-zsh
+        [ ] - transparent terminal
+        [ ] - add ubuntu default aliases .zshrc
+
 ## Vim
 [X] - Auto comment selected zones with `Ctrl + /` (cf Atom)
 [X] - Highlight & find while typing search with /
