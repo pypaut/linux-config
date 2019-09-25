@@ -9,7 +9,7 @@
 # Ubuntu
 
 ## i3 configuration
-[ ] - better i3 bar (see nm-applet)
+[ ] - better i3 bar (see nm-applet, [polybar](https://github.com/polybar/polybar))
     [ ] - workspace icons ([here](https://fontawesome.com))
 
 [ ] - sound/brightness, media buttons
