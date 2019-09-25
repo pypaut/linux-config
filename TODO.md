@@ -1,6 +1,6 @@
 # General
 
-[ ] - script to setup a full PC with personal config
+[/] - script to setup a full PC with personal config
     [ ] - usage: [script].py [os] [theme]
 
 [ ] - Proper README
