@@ -3,20 +3,26 @@
 [ ] - script to setup a full PC with personal config
     [ ] - usage: [script].py [os] [theme]
 
+[ ] - Proper README
+
 
 # Ubuntu
 
 ## i3 configuration
 [ ] - better i3 bar (see nm-applet)
-    [ ] - workspace icons
-[ ] - sound/brightness buttons
+    [ ] - workspace icons ([here](https://fontawesome.com))
+
+[ ] - sound/brightness, media buttons
+
 [ ] - battery alarm
+
 [ ] - rice themes!
     [ ] - nintendo
     [ ] - anime
     [ ] - post apocaliptical
     [ ] - supercars...
     [ ] - matrix
+
 [ ] - custom noises (with toggle pls)
 
 ## Vim
