@@ -2,7 +2,7 @@ set mouse=a
 set number
 set relativenumber
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=black
+hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=DarkGrey
 set colorcolumn=79
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 let g:netrw_banner = 0
