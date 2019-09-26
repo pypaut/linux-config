@@ -89,6 +89,7 @@ print("########## Setting configuration files...")
 
 subprocess.run(['mkdir', '.config/nvim'])
 subprocess.run(['mkdir', '.fonts'])
+subprocess.run(['mkdir', 'Programs'])
 
 for subdir, dirs, files in os.walk("linux-config/ubuntu/default"):
     for f in files:
