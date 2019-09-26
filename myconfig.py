@@ -50,6 +50,7 @@ packages = [
     'xterm',
     'zsh',
     'feh',
+    'tmux'
 ]
 
 command.extend(packages)
