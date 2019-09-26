@@ -1,16 +1,20 @@
+" GENERAL
 set mouse=a
 set number
 set relativenumber
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=DarkGrey
 set colorcolumn=79
-highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
 let g:netrw_banner = 0
+
+" COLORS & RICING
+hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=black
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight LineNr ctermfg=Blue
 set fillchars-=vert:\| | set fillchars+=vert:\ 
-
 syntax on
-set expandtab
 
+" EDITOR
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -26,11 +30,9 @@ set incsearch
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+" SPECIAL CHARACTERS
 set list
 set listchars=tab:>-
 
-
-" ### KEY BINDINGS ###
-
-" Ctrl + n to comment selected lines with v
+" Ctrl + n to comment selected lines in visual mode
 map <C-n> :norm i# <Return>
