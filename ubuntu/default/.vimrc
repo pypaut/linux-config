@@ -8,8 +8,9 @@ let g:netrw_banner = 0
 
 " COLORS & RICING
 hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=black
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-highlight LineNr ctermfg=Blue
+hi ColorColumn ctermbg=0 guibg=lightgrey
+hi LineNr ctermfg=Blue
+hi CursorLineNr ctermfg=Blue
 set fillchars-=vert:\| | set fillchars+=vert:\ 
 syntax on
 
