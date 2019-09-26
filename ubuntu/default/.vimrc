@@ -6,6 +6,7 @@ hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=black
 set colorcolumn=79
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 let g:netrw_banner = 0
+set fillchars-=vert:\| | set fillchars+=vert:\ 
 
 syntax on
 set expandtab
