@@ -50,7 +50,8 @@ packages = [
     'xterm',
     'zsh',
     'feh',
-    'tmux'
+    'tmux',
+    'compton',
 ]
 
 command.extend(packages)
@@ -60,27 +61,27 @@ subprocess.run(command)
 
 # Install i3 gaps
 
-print("")
-print("########## Installing i3-gaps...")
-if not os.path.exists('i3-gaps'):
-    subprocess.run(['git',
-                    'clone',
-                    'https://www.github.com/Airblader/i3',
-                    'i3-gaps'
-    ])
-    os.chdir(home + 'i3-gaps')
-    subprocess.run(['autoreconf', '--force', '--install'])
-    subprocess.run(['rm', '-rf', 'build/'])
-    subprocess.run(['mkdir', '-p', 'build'])
-    os.chdir(home + 'i3-gaps/build')
-    subprocess.run(['../configure',
-                    '--prefix=/usr',
-                    '--sysconfdir=/etc',
-                    '--disable-sanitizers'])
-    subprocess.run(['make'])
-    subprocess.run(['sudo', 'make', 'install'])
-    os.chdir(home)
-    subprocess.run(['rm', '-rf', 'i3-gaps'])
+# print("")
+# print("########## Installing i3-gaps...")
+# if not os.path.exists('i3-gaps'):
+#     subprocess.run(['git',
+#                     'clone',
+#                     'https://www.github.com/Airblader/i3',
+#                     'i3-gaps'
+#     ])
+#     os.chdir(home + 'i3-gaps')
+#     subprocess.run(['autoreconf', '--force', '--install'])
+#     subprocess.run(['rm', '-rf', 'build/'])
+#     subprocess.run(['mkdir', '-p', 'build'])
+#     os.chdir(home + 'i3-gaps/build')
+#     subprocess.run(['../configure',
+#                     '--prefix=/usr',
+#                     '--sysconfdir=/etc',
+#                     '--disable-sanitizers'])
+#     subprocess.run(['make'])
+#     subprocess.run(['sudo', 'make', 'install'])
+#     os.chdir(home)
+#     subprocess.run(['rm', '-rf', 'i3-gaps'])
 
 
 # Set configuration files
@@ -100,4 +101,4 @@ for subdir, dirs, files in os.walk("linux-config/ubuntu/default"):
         copyfile(src, dst)
 
 
-print("########## You're all set! You can now press Mod + Shift + R, and enjoy the show.")
+print("########## You're all set! You can now press Mod + Shift + R, and enjoy the show (you might need to reboot your system).")
