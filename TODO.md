@@ -1,7 +1,9 @@
 # General
 
-[/] - script to setup a full PC with personal config
-    [ ] - usage: [script].py [os] [theme]
+[/] - Script to setup a full PC with personal config
+    [ ] - Usage: [script].py [os] [theme]
+    [ ] - Options
+        [ ] - isfirsttime (not everything should be triggered everytime)
 
 [ ] - Proper README
 
@@ -9,32 +11,32 @@
 # Ubuntu
 
 ## i3 configuration
-[ ] - better i3 bar (see nm-applet, [polybar](https://github.com/polybar/polybar))
-    [ ] - workspace icons ([here](https://fontawesome.com))
+[ ] - Better i3 bar (see nm-applet, [polybar](https://github.com/polybar/polybar))
+    [ ] - Workspace icons ([here](https://fontawesome.com))
 
-[ ] - sound/brightness, media buttons
 
 [ ] - Media setup
   [ ] - Music player (CMUS + VIS)
     [ ] - Create playlists
     [ ] - Create script + path to launch tmux with CMUS | VIS
           (see Programs/ scripts)
+  [ ] - Sound/brightness, media buttons
 
-[ ] - battery alarm
+[ ] - Battery alarm
 
-[ ] - rice themes!
+[ ] - Rice themes!
     [ ] - nintendo
     [ ] - anime
     [ ] - post apocaliptical
     [ ] - supercars...
     [ ] - matrix
 
-[ ] - custom noises (with toggle pls)
+[ ] - Custom noises (with toggle pls)
 
 [ ] - Terminal
-    [/] - check zsh with oh-my-zsh
-    [X] - transparent terminal
-    [X] - add ubuntu default aliases .zshrc
+    [/] - Check zsh with oh-my-zsh
+    [X] - Transparent terminal
+    [X] - Add ubuntu default aliases .zshrc
 
 ## Vim
 [X] - Auto comment selected zones with `Ctrl + /` (cf Atom)
