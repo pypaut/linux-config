@@ -14,6 +14,12 @@
 
 [ ] - sound/brightness, media buttons
 
+[ ] - Media setup
+  [ ] - Music player (CMUS + VIS)
+    [ ] - Create playlists
+    [ ] - Create script + path to launch tmux with CMUS | VIS
+          (see Programs/ scripts)
+
 [ ] - battery alarm
 
 [ ] - rice themes!
