@@ -1,3 +1,4 @@
+from colorama import Fore, Style
 from pathlib import Path
 from shutil import copyfile, copy
 import argparse
@@ -18,7 +19,7 @@ home = '/home/geoffrey/'
 os.chdir(home)
 
 # Install packages
-print("########## Installing dependencies...")
+print(Fore.BLUE + "########## Installing dependencies..." + Style.RESET_ALL)
 
 command = [
     'sudo',
@@ -70,7 +71,7 @@ subprocess.run(command)
 if args.first:
     # Install i3 gaps
     print("")
-    print("########## Installing i3-gaps...")
+    print(Fore.BLUE + "########## Installing i3-gaps..." + Style.RESET_ALL)
     if not os.path.exists('i3-gaps'):
         subprocess.run(['git',
                         'clone',
@@ -94,7 +95,7 @@ if args.first:
 
 # Set configuration files
 print("")
-print("########## Setting configuration files...")
+print(Fore.BLUE + "########## Setting configuration files..." + Style.RESET_ALL)
 
 subprocess.run(['mkdir', '.config/nvim'])
 subprocess.run(['mkdir', '.fonts'])
@@ -107,8 +108,8 @@ if args.theme == None or args.theme == 'default':
             dst = re.sub("linux-config/ubuntu/default/", "", src)
             print(f"Adding ~/{dst}...")
             copyfile(src, dst)
+    print("########## You're all set! You can now press Mod + Shift + R, and enjoy the show (you might need to reboot your system).")
+
 else:
-    print("########## Unknown specified theme. Why don't you create one? Feel free to pull request at https://github.com/pypaut/linux-config.")
+    print(Fore.RED + "########## ERROR: Unknown specified theme. Why don't you create one? Feel free to pull request at https://github.com/pypaut/linux-config." + Style.RESET_ALL)
 
-
-print("########## You're all set! You can now press Mod + Shift + R, and enjoy the show (you might need to reboot your system).")
