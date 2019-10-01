@@ -63,6 +63,10 @@ packages = [
     'feh',
     'tmux',
     'compton',
+    'libfftw3-dev',
+    'libncursesw5-dev',
+    'cmake',
+    'libpulse-dev',
 ]
 
 command.extend(packages)
@@ -71,13 +75,13 @@ subprocess.run(command)
 
 if args.first:
     # Install i3 gaps
-    print("")
-    print(Fore.BLUE + "########## Installing i3-gaps..." + Style.RESET_ALL)
     if not os.path.exists('i3-gaps'):
+        print("")
+        print(Fore.BLUE + "########## Installing i3-gaps..." + Style.RESET_ALL)
         subprocess.run(['git',
-                        'clone',
-                        'https://www.github.com/Airblader/i3',
-                        'i3-gaps'
+                'clone',
+                'https://www.github.com/Airblader/i3',
+                'i3-gaps'
         ])
         os.chdir(home + 'i3-gaps')
         subprocess.run(['autoreconf', '--force', '--install'])
@@ -92,6 +96,19 @@ if args.first:
         subprocess.run(['sudo', 'make', 'install'])
         os.chdir(home)
         subprocess.run(['rm', '-rf', 'i3-gaps'])
+
+    # Install VIS
+    if not os.path.exists('cli-visualizer'):
+        print("")
+        print(Fore.BLUE + "########## Installing VIS..." + Style.RESET_ALL)
+        subprocess.run(['git',
+                        'clone',
+                        'git@github.com:dpayne/cli-visualizer.git',
+        ])
+        os.chdir(home + 'cli-visualizer')
+        subprocess.run(['install.sh'])
+        os.chdir(home)
+        subprocess.run(['rm', '-rf', 'cli-visualizer'])
 
 
 # Set configuration files
