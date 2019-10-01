@@ -1,14 +1,14 @@
-import subprocess
-from shutil import copyfile, copy
 from pathlib import Path
+from shutil import copyfile, copy
 import os
 import re
+import subprocess
 
+# Variables
 home = '/home/geoffrey/'
 os.chdir(home)
 
 # Install packages
-
 print("########## Installing dependencies...")
 
 command = [
@@ -60,7 +60,6 @@ subprocess.run(command)
 
 
 # Install i3 gaps
-
 # print("")
 # print("########## Installing i3-gaps...")
 # if not os.path.exists('i3-gaps'):
@@ -85,7 +84,6 @@ subprocess.run(command)
 
 
 # Set configuration files
-
 print("")
 print("########## Setting configuration files...")
 
