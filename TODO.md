@@ -25,11 +25,12 @@
 [ ] - Battery alarm
 
 [ ] - Rice themes!
-    [ ] - nintendo
-    [ ] - anime
-    [ ] - post apocaliptical
-    [ ] - supercars...
-    [ ] - matrix
+    [ ] - Nintendo
+    [ ] - Anime
+    [ ] - Post apocaliptical
+    [ ] - Cars
+    [ ] - Matrix
+    [ ] - Skyrim
 
 [ ] - Custom noises (with toggle pls)
 
