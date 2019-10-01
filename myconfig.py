@@ -55,6 +55,7 @@ packages = [
     'suckless-tools',
     'rofi',
     'vim',
+    'neovim',
     'chromium-browser',
     'rxvt-unicode',
     'xterm',
