@@ -2,8 +2,8 @@
 
 [/] - Script to setup a full PC with personal config
     [ ] - Usage: [script].py [os] [theme]
-    [ ] - Options
-        [ ] - isfirsttime (not everything should be triggered everytime)
+    [X] - Options
+        [X] - isfirsttime (not everything should be triggered everytime)
 
 [ ] - Proper README
 
