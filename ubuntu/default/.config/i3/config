@@ -30,7 +30,7 @@ font pango:System San Francisco Display 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
