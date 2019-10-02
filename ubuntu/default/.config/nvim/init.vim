@@ -3,7 +3,7 @@ set mouse=a
 set number
 set relativenumber
 set cursorline
-set colorcolumn=79
+" set colorcolumn=79
 let g:netrw_banner = 0
 
 set tabstop=4
