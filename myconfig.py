@@ -131,3 +131,4 @@ if args.theme == None or args.theme == 'default':
 else:
     print(Fore.RED + "########## ERROR: Unknown specified theme. Why don't you create one? Feel free to pull request at https://github.com/pypaut/linux-config." + Style.RESET_ALL)
 
+subprocess.run(['xrdb ~/.Xresources'], shell=True)
