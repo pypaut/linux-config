@@ -39,9 +39,10 @@
     [X] - Transparent terminal
     [X] - Add ubuntu default aliases .zshrc
 
-## Vim
+## Vim / Neovim
 [X] - Auto comment selected zones with `Ctrl + /` (cf Atom)
 [X] - Highlight & find while typing search with /
 [X] - Add doc/better comments in .vimrc
+[X] - Change cursor with mode (block for normal and beam for insert)
 [ ] - Custom theme
-[ ] - Change cursor with mode (block for normal and beam for insert)
+    [ ] - Delimiters color (currently white lines)
