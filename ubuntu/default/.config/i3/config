@@ -227,9 +227,10 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # Key mapping
-exec_always source ~/.xinitrc
 bindsym $mod+Shift+s exec --no-startup-id ~/Programs/monitor.sh
 exec_always compton
+exec_always "source ~/.xinitrc"
+exec_always "xrdb ~/.Xresources"
 
 
 # Ricing
