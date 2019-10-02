@@ -14,30 +14,30 @@
 [ ] - Better i3 bar (see nm-applet, [polybar](https://github.com/polybar/polybar))
     [ ] - Workspace icons ([here](https://fontawesome.com))
 
-
 [ ] - Media setup
-  [ ] - Music player (CMUS + VIS)
-    [ ] - Create playlists
-    [ ] - Create script + path to launch tmux with CMUS | VIS
+  [X] - Music player (CMUS + VIS)
+    [X] - Create script + path to launch tmux with CMUS | VIS
           (see Programs/ scripts)
-  [ ] - Sound/brightness, media buttons
+  [ ] - Sound/brightness, media buttons + display
+  [ ] - Battery alarm
 
-[ ] - Battery alarm
-
-[ ] - Rice themes!
+[ ] - Themes
+  [ ] - Ideas
+    [/] - Default
     [ ] - Nintendo
     [ ] - Anime
     [ ] - Post apocaliptical
     [ ] - Cars
     [ ] - Matrix
     [ ] - Skyrim
+  [ ] - Custom noises (with toggle pls)
 
-[ ] - Custom noises (with toggle pls)
-
-[ ] - Terminal
-    [/] - Check zsh with oh-my-zsh
+[/] - Terminal
+    [ ] - Check zsh with oh-my-zsh
     [X] - Transparent terminal
     [X] - Add ubuntu default aliases .zshrc
+
+[ ] - Better rofi format
 
 ## Vim / Neovim
 [X] - Auto comment selected zones with `Ctrl + /` (cf Atom)
