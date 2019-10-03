@@ -30,6 +30,8 @@
     [ ] - Cars
     [ ] - Matrix
     [ ] - Skyrim
+    [ ] - Synthwave
+    [ ] - Seasons/meteo ambiances
   [ ] - Custom noises (with toggle pls)
 
 [/] - Terminal
