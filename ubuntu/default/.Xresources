@@ -57,9 +57,9 @@ URxvt.depth: 24
 URxvt.iso14755: false
 
 
-*.font: xft:Iosevka:style=Regular:size=8
-*.boldFont: xft:Iosevka:style=Bold:size=8
-*.italicFont: xft:Iosevka:style=Italic:size=8
-*.boldItalicFont: xft:Iosevka:style=Bold Italic:size=8
+*.font: xft:Iosevka:style=Regular:size=9
+*.boldFont: xft:Iosevka:style=Bold:size=9
+*.italicFont: xft:Iosevka:style=Italic:size=9
+*.boldItalicFont: xft:Iosevka:style=Bold Italic:size=9
 
 XTerm*metaSendsEscape: true
