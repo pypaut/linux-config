@@ -235,7 +235,7 @@ exec_always "xrdb ~/.Xresources"
 
 # Ricing
 for_window [class="^.*"] border pixel 3
-exec_always feh --bg-fill ~/Pictures/cyberlife01.png
+exec_always feh --bg-fill ~/Pictures/mask02.png
 
 # Gaps
 
