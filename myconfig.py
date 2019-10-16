@@ -118,10 +118,10 @@ subprocess.run(['mkdir', '.fonts'])
 subprocess.run(['mkdir', 'Programs'])
 
 if args.theme == None or args.theme == 'default':
-    for subdir, dirs, files in os.walk("linux-config/ubuntu/default"):
+    for subdir, dirs, files in os.walk("linux-config"):
         for f in files:
             src = str(subdir + os.sep + f)
-            dst = re.sub("linux-config/ubuntu/default/", "", src)
+            dst = re.sub("linux-config", "", src)
             print(f"Adding ~/{dst}...")
             copyfile(src, dst)
     print("########## You're all set! You can now press Mod + Shift + R, and enjoy the show (you might need to reboot your system).")
