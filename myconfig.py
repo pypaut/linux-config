@@ -15,7 +15,7 @@ parser.add_argument('--theme', help='Theme specified (default: default)')
 args = parser.parse_args()
 
 # Variables
-home = '/home/geoffrey/'
+home = '/home/pypaut/'
 os.chdir(home)
 
 # Install packages
@@ -121,9 +121,10 @@ if args.theme == None or args.theme == 'default':
     for subdir, dirs, files in os.walk("linux-config"):
         for f in files:
             src = str(subdir + os.sep + f)
-            dst = re.sub("linux-config", "", src)
-            print(f"Adding ~/{dst}...")
-            copyfile(src, dst)
+            if ".git" not in src:
+                dst = re.sub("linux-config/", home, src)
+                print(f"Adding {dst}...")
+                copyfile(src, dst)
     print("########## You're all set! You can now press Mod + Shift + R, and enjoy the show (you might need to reboot your system).")
 
 else:
