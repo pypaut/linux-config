@@ -1,3 +1,6 @@
+" FIX FOR SWAP FILE ERROR
+set directory=.,$TEMP
+
 " GENERAL
 set mouse=a
 set number
