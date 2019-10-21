@@ -23,7 +23,14 @@ hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=Black
 hi ColorColumn ctermbg=Black guibg=lightgrey
 hi LineNr ctermfg=Blue
 hi CursorLineNr ctermfg=Blue
+" Middle line character (replace pipe)
 set fillchars-=vert:\| | set fillchars+=vert:\ 
+" Active status line
+hi StatusLine ctermbg=Black ctermfg=Blue
+" Inactive status line
+hi StatusLineNC ctermbg=Black ctermfg=Blue
+" Vertical separation line
+hi VertSplit ctermbg=Black ctermfg=Black
 
 " WARNINGS
 highlight ExtraWhitespace ctermbg=red guibg=red
