@@ -1,0 +1,5 @@
+(add-to-list 'load-path "~/.emacs/goto-chg")
+(add-to-list 'load-path "~/.emacs/undo-tree")
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
