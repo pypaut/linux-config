@@ -13,8 +13,18 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
+set smarttab
 set autoindent
+set smartindent
 set expandtab
+
+" AUTO CLOSING (GOAL: auto insert closing + insert tab when hit return)
+inoremap ( ()<Esc>i
+" inoremap (<CR> (<CR>)<Esc>ko<tab>
+inoremap [ []<Esc>i
+inoremap { {<CR>}<Esc>O
+inoremap " ""<Esc>i
+inoremap ' ''<Esc>i
 
 " COLORS & RICING
 hi clear
