@@ -56,10 +56,14 @@ URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
 
-
 *.font: xft:Iosevka:style=Regular:size=9
 *.boldFont: xft:Iosevka:style=Bold:size=9
 *.italicFont: xft:Iosevka:style=Italic:size=9
 *.boldItalicFont: xft:Iosevka:style=Bold Italic:size=9
 
+!! Keybindings
+XTerm*metaSendsEscape: true
+XTerm*vt100.translations: #override \
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
 XTerm*metaSendsEscape: true
