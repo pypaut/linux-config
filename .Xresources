@@ -62,7 +62,6 @@ URxvt.iso14755: false
 *.boldItalicFont: xft:Iosevka:style=Bold Italic:size=9
 
 !! Keybindings
-XTerm*metaSendsEscape: true
 XTerm*vt100.translations: #override \
     Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
     Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
