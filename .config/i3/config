@@ -50,7 +50,7 @@ bindsym $mod+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
@@ -158,6 +158,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Display
 bindsym $mod+Shift+s exec --no-startup-id ~/Programs/monitor.sh
 
+# Browser
+bindsym $mod+w exec firefox
+
 
 ##########
 # RICING #
@@ -169,7 +172,7 @@ font pango:System San Francisco Display 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/wallpaper05.jpg
+exec_always feh --bg-fill ~/Pictures/wol03.png
 
 # Color variables
 set $active-window       #4D5567
