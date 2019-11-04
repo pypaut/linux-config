@@ -73,7 +73,7 @@ bindkey '^e' edit-command-line
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 
-# aliases
+# Aliases
 alias glog='git log --oneline'
 alias ls='ls --color=auto'
 alias ll='ls -alF'
@@ -84,3 +84,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias v='nvim'
 alias clock='tty-clock -ct -C 4'
+
+# Environment
+export EDITOR=nvim
+export GIT_EDITOR=nvim
