@@ -1,39 +1,78 @@
-" GENERAL
+" === FIX FOR SWAP FILE ERROR
+set directory=.,$TEMP
+
+
+"  === GENERAL
 set mouse=a
 set number
 set relativenumber
 set cursorline
-set colorcolumn=79
+" set colorcolumn=79
 let g:netrw_banner = 0
+set notimeout
+set timeout timeoutlen=3000 ttimeoutlen=100
 
-" COLORS & RICING
-hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=black
-hi ColorColumn ctermbg=0 guibg=lightgrey
-hi LineNr ctermfg=Blue
-hi CursorLineNr ctermfg=Blue
-set fillchars-=vert:\| | set fillchars+=vert:\ 
-syntax on
 
-" EDITOR
-set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
+set smarttab
 set autoindent
+"set smartindent
+set expandtab
 
-" SEARCH OPTIONS
-set ignorecase
-set smartcase " case sensitive only if uppercase
-set incsearch
 
-" TRAILING SPACES
+" === AUTO CLOSING (GOAL: auto insert closing + insert tab when hit return)
+"inoremap ( ()<Esc>i
+"inoremap (<CR> (<CR>)<Esc>ko<tab>
+"inoremap [ []<Esc>i
+"inoremap { {<CR>}<Esc>O
+"inoremap " ""<Esc>i
+"inoremap ' ''<Esc>i
+
+
+" === COLORS & RICING
+hi clear
+syntax on
+hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=Black
+hi ColorColumn ctermbg=Black guibg=lightgrey
+hi LineNr ctermfg=Blue
+hi CursorLineNr ctermfg=Blue
+" --- Separator character
+set fillchars-=vert:\| | set fillchars+=vert:\ 
+" --- Active status line
+hi StatusLine ctermbg=Black ctermfg=Blue
+" --- Inactive status line
+hi StatusLineNC ctermbg=Black ctermfg=Blue
+" --- Vertical separation line
+hi VertSplit ctermbg=Black ctermfg=Black
+" --- Status bar
+set laststatus=1
+set statusline=hi
+" set shortmess=F
+let python_highlight_all = 1
+
+
+" === WARNINGS
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-" SPECIAL CHARACTERS
+" === SEARCH OPTIONS
+set ignorecase
+set smartcase " case sensitive only if uppercase
+set incsearch
+set nohlsearch
+
+
+" === SPECIAL CHARACTERS
 set list
 set listchars=tab:>-
 
-" Ctrl + n to comment selected lines in visual mode
+
+" === SHORTCUTS
+" --- Ctrl + n to comment selected lines with v
 map <C-n> :norm i# <Return>
+
+" --- F2 to exec Python code
+autocmd FileType python nnoremap <buffer> <F2> :exec '!python3' shellescape(@%, 1)<cr>
