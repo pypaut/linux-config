@@ -9,9 +9,8 @@ set relativenumber
 set cursorline
 " set colorcolumn=79
 let g:netrw_banner = 0
-set notimeout
-set timeout timeoutlen=3000 ttimeoutlen=100
-
+set timeout ttimeout timeoutlen=0 ttimeoutlen=0
+set completeopt=longest,menuone
 
 set tabstop=4
 set softtabstop=4
@@ -65,6 +64,7 @@ match ExtraWhitespace /\s\+$/
 " === SEARCH OPTIONS
 set ignorecase
 set smartcase " case sensitive only if uppercase
+set infercase " complete your word with current case
 set incsearch
 set nohlsearch
 
