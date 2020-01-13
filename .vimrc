@@ -80,3 +80,7 @@ map <C-n> :norm i# <Return>
 
 " --- F2 to exec Python code
 autocmd FileType python nnoremap <buffer> <F2> :exec '!python3' shellescape(@%, 1)<cr>
+
+" --- Enable folding
+set foldmethod=indent
+set foldlevel=99
