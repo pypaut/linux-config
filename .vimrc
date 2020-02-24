@@ -59,7 +59,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 " --- Long lines, because colorcolumn is ugly
 " :au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
+:au BufWinEnter *.py let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
 " === SEARCH OPTIONS
 set ignorecase
