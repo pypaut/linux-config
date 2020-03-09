@@ -104,6 +104,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # Assign applications to workspace
 # assign [class="Firefox"] $workspace1
 # assign [class="Rhythmbox"] $workspace10
+assign [class="(?i)steam"] $workspace4
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,7 +200,7 @@ bar {
         tray_output primary
         colors {
             background $bg-color
-            separator  #757575
+            separator  $edge-color
             #                  border             background         text
             focused_workspace  $bg-color          $bg-color          $text-color
             inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
