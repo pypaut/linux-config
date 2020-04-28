@@ -11,6 +11,7 @@ set cursorline
 let g:netrw_banner = 0
 set timeout ttimeout timeoutlen=0 ttimeoutlen=0
 set completeopt=longest,menuone
+set omnifunc=syntaxcomplete#Complete
 
 set tabstop=4
 set softtabstop=4
