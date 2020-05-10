@@ -12,15 +12,8 @@ let g:netrw_banner = 0
 set timeout ttimeout timeoutlen=0 ttimeoutlen=0
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
-
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set shiftround
-set smarttab
-set autoindent
-"set smartindent
-set expandtab
+set encoding=utf-8
+set fileformat=unix
 
 
 " === AUTO CLOSING (GOAL: auto insert closing + insert tab when hit return)
@@ -30,6 +23,24 @@ set expandtab
 "inoremap { {<CR>}<Esc>O
 "inoremap " ""<Esc>i
 "inoremap ' ''<Esc>i
+
+
+" === INDENTATION
+" --- PEP 8 INDENTATION
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=79
+set expandtab
+set smarttab
+set shiftround
+set autoindent
+set smartindent
+" --- WEBDEV
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
 
 " === COLORS & RICING
