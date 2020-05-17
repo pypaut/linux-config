@@ -50,8 +50,11 @@ hi StatusLineNC ctermbg=Black ctermfg=Blue
 hi LineNr       ctermfg=8
 hi CursorLineNr ctermfg=Blue
 hi VertSplit    ctermbg=Black ctermfg=Black
-hi CursorLine   ctermbg=Black ctermfg=none cterm=bold
+hi CursorLine   ctermbg=Black ctermfg=none  cterm=bold
 hi Comment      ctermbg=none  ctermfg=8
+hi Cursor       ctermbg=none  ctermfg=0
+hi Folded       ctermbg=none  ctermfg=8
+hi MatchParen   ctermbg=none  ctermfg=2     cterm=bold
 
 
 " === COMMANDS
