@@ -1,66 +1,43 @@
-" === FIX FOR SWAP FILE ERROR
-set directory=.,$TEMP
+syntax enable
+filetype plugin on
+
+" === BROWSING
+set path+=**
+set wildmenu
+let g:netrw_banner=0
+let g:netrw_list_hide=netrw_gitignore#Hide()
 
 
-"  === GENERAL
+" === SEARCHING
+set ignorecase
+set smartcase
+set incsearch
+set nohlsearch
+
+
+" === GENERAL
 set mouse=a
-set number
-set relativenumber
-set cursorline
-" set colorcolumn=79
-let g:netrw_banner = 0
-
-
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
 set smarttab
 set autoindent
-"set smartindent
+set smartindent
 set expandtab
-
-
-" === AUTO CLOSING (GOAL: auto insert closing + insert tab when hit return)
-"inoremap ( ()<Esc>i
-"inoremap (<CR> (<CR>)<Esc>ko<tab>
-"inoremap [ []<Esc>i
-"inoremap { {<CR>}<Esc>O
-"inoremap " ""<Esc>i
-"inoremap ' ''<Esc>i
-
-
-" === COLORS & RICING
-hi clear
-syntax on
-hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=Black
-hi ColorColumn ctermbg=Black guibg=lightgrey
-hi LineNr ctermfg=Blue
-hi CursorLineNr ctermfg=Blue
-" --- Separator character
-set fillchars-=vert:\| | set fillchars+=vert:\ 
-" --- Active status line
-hi StatusLine ctermbg=Black ctermfg=Blue
-" --- Inactive status line
-hi StatusLineNC ctermbg=Black ctermfg=Blue
-" --- Vertical separation line
-hi VertSplit ctermbg=Black ctermfg=Black
-" --- Status bar
-set laststatus=0
-set statusline=
-"set shortmess=F
+set cursorline
+set number
+set relativenumber
+set fileformat=unix
+set laststatus=2
+set statusline=%F
 
 
 " === WARNINGS
-highlight ExtraWhitespace ctermbg=red guibg=red
+set fillchars-=vert:\| | set fillchars+=vert:\ 
+hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-
-
-" === SEARCH OPTIONS
-set ignorecase
-set smartcase " case sensitive only if uppercase
-set incsearch
-set nohlsearch
+:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
 
 " === SPECIAL CHARACTERS
@@ -68,9 +45,18 @@ set list
 set listchars=tab:>-
 
 
-" === SHORTCUTS
-" --- Ctrl + n to comment selected lines with v
-map <C-n> :norm i# <Return>
+" === COLORS
+hi StatusLine   ctermbg=Black ctermfg=Blue
+hi StatusLineNC ctermbg=Black ctermfg=Blue
+hi LineNr       ctermfg=8
+hi CursorLineNr ctermfg=White
+hi VertSplit    ctermbg=Black ctermfg=Black
+hi CursorLine   ctermbg=Black ctermfg=none  cterm=bold
+hi Comment      ctermbg=none  ctermfg=8
+hi Cursor       ctermbg=none  ctermfg=0
+hi Folded       ctermbg=none  ctermfg=8
+hi MatchParen   ctermbg=none  ctermfg=2     cterm=bold
 
-" --- F2 to exec Python code
-autocmd FileType python nnoremap <buffer> <F2> :exec '!python3' shellescape(@%, 1)<cr>
+
+" === COMMANDS
+command! Maketags !ctags -R .
