@@ -1,7 +1,8 @@
 # Startup
 exec_always compton
-exec_always "source ~/.xinitrc"
 exec_always "xrdb ~/.Xresources"
+exec_always "xmodmap -e 'clear Lock'"
+exec_always "xmodmap -e 'keycode 0x42=Escape'"
 
 set $mod Mod4
 
@@ -13,7 +14,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec st
 
 # Kill focused window
 bindsym $mod+Shift+q kill
