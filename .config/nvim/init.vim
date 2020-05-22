@@ -46,8 +46,8 @@ set listchars=tab:>-
 
 
 " === COLORS
-hi StatusLine   ctermbg=Black ctermfg=Blue
-hi StatusLineNC ctermbg=Black ctermfg=Blue
+hi StatusLine   ctermbg=Black ctermfg=8
+hi StatusLineNC ctermbg=Black ctermfg=8
 hi LineNr       ctermfg=8
 hi CursorLineNr ctermfg=White
 hi VertSplit    ctermbg=Black ctermfg=Black
