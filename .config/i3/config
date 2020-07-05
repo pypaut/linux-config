@@ -137,7 +137,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock
-bindsym $mod+shift+x exec i3lock -i ~/Pictures/random01.png
+bindsym $mod+shift+x exec i3lock -i ~/Pictures/wallpaper.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
@@ -172,51 +172,51 @@ bindsym $mod+a exec atom
 ##########
 
 # Title & bar font
-font pango:System San Francisco Display 8
+font pango:System San Francisco Display 7
 #font pango:DejaVu Sans Mono 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/wol03.png
+exec_always feh --bg-fill ~/Pictures/wallpaper.png
 
 # Color variables
-set $active-window       #4D5567
-set $bg-color            #2f343f
-set $inactive-bg-color   #25282f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $edge-color          #525252
+set $black      #000000
+set $white      #ffffff
+set $gray       #787878
+set $darkgrey   #555555
+set $yellow     #ffe94d
 
 # Window colors
-#                       border              background         text                 indicator
-client.focused          $active-window      $active-window     $text-color          $edge-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $edge-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $edge-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $edge-color
+#                       ?               border          text?       indicator?
+client.focused          $gray           $gray           $white      $grey
+client.unfocused        $darkgrey       $darkgrey       $grey       $darkgrey
+client.focused_inactive $darkgrey       $darkgrey       $grey       $darkgrey
+client.urgent           $yellow         $yellow         $yellow     $darkgrey
+
 
 # i3bar
 bar {
         status_command i3status
         tray_output primary
         colors {
-            background $bg-color
-            separator  $edge-color
-            #                  border             background         text
-            focused_workspace  $bg-color          $bg-color          $text-color
-            inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-            urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+            background $black
+            separator  $darkgray
+            #                   border      background      text
+            focused_workspace   $black      $black          $white
+            inactive_workspace  $black      $black          $grey
+            urgent_workspace    $black      $black          $yellow
         }
 }
 
 # Border
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 4
 
 # Set inner/outer gaps
 gaps inner 12
 gaps outer 1
 
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# Additionally, you can issue commands with the following syntax.
+# This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
 # gaps inner all set 10
 # gaps outer all plus 5
@@ -224,14 +224,18 @@ gaps outer 1
 # Gaps only when 2+ containers
 # smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+# Smart borders (draw borders around container only if it is not the only
+# container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to
+# the edge of the screen is 0)
 smart_borders no_gaps
 
 # Press $mod+Shift+g to enter the gap mode.
 # Choose o or i for modifying outer/inner gaps.
-# Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace).
-# If you also press Shift with these keys, the change will be global for all workspaces.
+# Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps
+# for current workspace).
+# If you also press Shift with these keys, the change will be global for all
+# workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
