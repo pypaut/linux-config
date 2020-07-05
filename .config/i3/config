@@ -67,16 +67,23 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # Workspaces
-set $workspace1 "1: Browser"
-set $workspace2 "2: Editor"
-set $workspace3 "3: Terminal"
-set $workspace4 "4: Games"
-set $workspace5 "5: Productivity"
-set $workspace6 "6: Explorer"
+## Kenkyū : research, studies
+set $workspace1 "研究"
+# Yonda : read
+set $workspace2 "読んだ"
+# Kaku : write
+set $workspace3 "書く"
+# Asobu : to play
+set $workspace4 "遊ぶ"
+# Soshiki organization, system, construction
+set $workspace5 "組織"
+set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9: Chat"
-set $workspace10 "10: Music"
+# Hanashi : story, talk, speech, conversation, chat
+set $workspace9 "話"
+# Ongaku : music
+set $workspace10 "音楽"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
