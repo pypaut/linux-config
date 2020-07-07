@@ -68,22 +68,22 @@ bindsym $mod+space focus mode_toggle
 
 # Workspaces
 ## Kenkyū : research, studies
-set $workspace1 "研究"
+set $workspace1 "1 研究"
 # Yonda : read
-set $workspace2 "読んだ"
+set $workspace2 "2 読んだ"
 # Kaku : write
-set $workspace3 "書く"
+set $workspace3 "3 書く"
 # Asobu : to play
-set $workspace4 "遊ぶ"
+set $workspace4 "4 遊ぶ"
 # Soshiki organization, system, construction
-set $workspace5 "組織"
+set $workspace5 "5 組織"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 # Hanashi : story, talk, speech, conversation, chat
-set $workspace9 "話"
+set $workspace9 "9 話"
 # Ongaku : music
-set $workspace10 "音楽"
+set $workspace10 "10 音楽"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -144,7 +144,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock
-bindsym $mod+shift+x exec i3lock -i ~/Pictures/wallpaper.png
+bindsym $mod+shift+x exec i3lock -i ~/Pictures/tree.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
@@ -184,21 +184,35 @@ font pango:System San Francisco Display 7
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/wallpaper.png
+exec_always feh --bg-fill ~/Pictures/tree.png
 
 # Color variables
+
+# Blacked out theme
 set $black      #000000
 set $white      #ffffff
 set $gray       #787878
 set $darkgrey   #555555
 set $yellow     #ffe94d
 
+# Linux Mint Theme
+set $mint       #86be43
+set $mintgray   #2e2e2e
+
 # Window colors
-#                       ?               border          text?       indicator?
-client.focused          $gray           $gray           $white      $grey
-client.unfocused        $darkgrey       $darkgrey       $grey       $darkgrey
-client.focused_inactive $darkgrey       $darkgrey       $grey       $darkgrey
-client.urgent           $yellow         $yellow         $yellow     $darkgrey
+#                         ?             border          text?       split indic
+
+# Blacked out
+# client.focused          $gray         $gray           $white      $grey
+# client.unfocused        $darkgrey     $darkgrey       $grey       $darkgrey
+# client.focused_inactive $darkgrey     $darkgrey       $grey       $darkgrey
+# client.urgent           $yellow       $yellow         $yellow     $yellow
+
+# Mint
+client.focused          $gray           $mint           $white      $mint
+client.unfocused        $darkgrey       $mintgray       $grey       $mintgray
+client.focused_inactive $darkgrey       $darkgrey       $grey       $mintgray
+client.urgent           $yellow         $yellow         $white      $yellow
 
 
 # i3bar
@@ -206,12 +220,21 @@ bar {
         status_command i3status
         tray_output primary
         colors {
-            background $black
-            separator  $darkgray
+            # Blacked out
+            # background $black
+            # separator  $darkgray
+            # #                   border      background      text
+            # focused_workspace   $black      $black          $white
+            # inactive_workspace  $black      $black          $grey
+            # urgent_workspace    $black      $black          $yellow
+
+            # Mint
+            background $mintgray
+            separator  $mint
             #                   border      background      text
-            focused_workspace   $black      $black          $white
-            inactive_workspace  $black      $black          $grey
-            urgent_workspace    $black      $black          $yellow
+            focused_workspace   $mint       $mint           $white
+            inactive_workspace  $mintgray   $mintgray       $white
+            urgent_workspace    $mintgray   $yellow         $white
         }
 }
 
