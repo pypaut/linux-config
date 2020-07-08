@@ -144,7 +144,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock
-bindsym $mod+shift+x exec i3lock -i ~/Pictures/tree.png
+bindsym $mod+shift+x exec i3lock -i ~/Pictures/minitree.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
@@ -184,7 +184,7 @@ font pango:System San Francisco Display 7
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/tree.png
+exec_always feh --bg-fill ~/Pictures/minitree.png
 
 # Color variables
 
@@ -197,7 +197,8 @@ set $yellow     #ffe94d
 
 # Linux Mint Theme
 set $mint       #86be43
-set $mintgray   #2e2e2e
+set $mintgray   #404040
+set $mintdgray  #2e2e2e
 
 # Window colors
 #                         ?             border          text?       split indic
@@ -209,9 +210,9 @@ set $mintgray   #2e2e2e
 # client.urgent           $yellow       $yellow         $yellow     $yellow
 
 # Mint
-client.focused          $gray           $mint           $white      $mint
-client.unfocused        $darkgrey       $mintgray       $grey       $mintgray
-client.focused_inactive $darkgrey       $darkgrey       $grey       $mintgray
+client.focused          $gray           $mintgray       $white      $mintgray
+client.unfocused        $mintdgrey      $mintdgray      $white      $mintdgray
+client.focused_inactive $mintdgrey      $mintdgray      $white      $mintdgray
 client.urgent           $yellow         $yellow         $white      $yellow
 
 
@@ -234,7 +235,7 @@ bar {
             #                   border      background      text
             focused_workspace   $mint       $mint           $white
             inactive_workspace  $mintgray   $mintgray       $white
-            urgent_workspace    $mintgray   $yellow         $white
+            urgent_workspace    $mintdgray  $yellow         $white
         }
 }
 
