@@ -67,23 +67,16 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # Workspaces
-## Kenkyū : research, studies
-set $workspace1 "1 研究"
-# Yonda : read
-set $workspace2 "2 読んだ"
-# Kaku : write
-set $workspace3 "3 書く"
-# Asobu : to play
-set $workspace4 "4 遊ぶ"
-# Soshiki organization, system, construction
-set $workspace5 "5 組織"
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-# Hanashi : story, talk, speech, conversation, chat
-set $workspace9 "9 話"
-# Ongaku : music
-set $workspace10 "10 音楽"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -240,7 +233,7 @@ bar {
 }
 
 # Border
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
 gaps inner 12
