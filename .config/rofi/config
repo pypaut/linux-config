@@ -1,7 +1,7 @@
 ! == COLORS == !
 ! State:           'bg',        'fg',     'bgalt',     'hlbg',     'hlfg'
 !                  '1/2lines',  'font',   '1/2lines',  'selected', 'hlfg'
-rofi.color-normal: #2e2e2e,       #FFFFFF,  #2e2e2e,     #86be43,    #FFFFFF
+rofi.color-normal: #2e3440,       #FFFFFF,  #2e3440,     #4c566a,    #FFFFFF
 rofi.color-window: argb:c82d303b, #7c8389, #1d1f21
 rofi.color-urgent: argb:c82d303b, #cc6666, argb:e54b5160, #a54242, #f9f9f9
 rofi.color-active: argb:c82d303b, #65acff, argb:e44b5160, #4491ed, #f9f9f9
@@ -9,7 +9,7 @@ rofi.color-active: argb:c82d303b, #65acff, argb:e44b5160, #4491ed, #f9f9f9
 
 ! == WINDOW COLOR == !
 !                  'background', 'border'
-rofi.color-window: #2e2e2e,      #404040
+rofi.color-window: #2e3440,      #4c566a
 
 
 ! == RICING == !
@@ -18,7 +18,7 @@ rofi.lines:                     5
 rofi.columns:                   1
 rofi.font:                      Noto Sans 14
 rofi.eh:                        1
-rofi.bw:                        2
+rofi.bw:                        3
 rofi.separator-style:           solid
 rofi.hide-scrollbar:            true
 rofi.show-icons:                true
