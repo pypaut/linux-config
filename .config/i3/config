@@ -14,7 +14,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec gnome-terminal
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -137,7 +137,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock
-bindsym $mod+shift+x exec i3lock -i ~/Pictures/minitree.png
+bindsym $mod+shift+x exec i3lock -t -i ~/Pictures/wallpaper.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
@@ -158,7 +158,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Display
-bindsym $mod+Shift+s exec --no-startup-id ~/Programs/monitor.sh
+bindsym $mod+Shift+p exec --no-startup-id ~/Programs/monitor.sh
+
+# Screenshot
+bindsym --release $mod+Shift+s exec scrot -sf -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots/'
 
 # Browser
 bindsym $mod+w exec firefox
@@ -177,7 +180,7 @@ font pango:System San Francisco Display 7
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/minitree.png
+exec_always feh --bg-fill ~/Pictures/wallpaper.png
 
 # Color variables
 
@@ -193,6 +196,11 @@ set $mint       #86be43
 set $mintgray   #404040
 set $mintdgray  #2e2e2e
 
+# Nord theme
+set $bgblue     #2e3440
+set $dimblue    #4c566a
+set $fgblue     #81a1c1
+
 # Window colors
 #                         ?             border          text?       split indic
 
@@ -203,10 +211,16 @@ set $mintdgray  #2e2e2e
 # client.urgent           $yellow       $yellow         $yellow     $yellow
 
 # Mint
-client.focused          $gray           $mintgray       $white      $mintgray
-client.unfocused        $mintdgrey      $mintdgray      $white      $mintdgray
-client.focused_inactive $mintdgrey      $mintdgray      $white      $mintdgray
-client.urgent           $yellow         $yellow         $white      $yellow
+# client.focused          $gray           $mintgray       $white      $mintgray
+# client.unfocused        $mintdgrey      $mintdgray      $white      $mintdgray
+# client.focused_inactive $mintdgrey      $mintdgray      $white      $mintdgray
+# client.urgent           $yellow         $yellow         $white      $yellow
+
+# Nord
+client.focused          $dimblue        $dimblue        $white       $dimblue
+client.unfocused        $bgblue         $bgblue         $white       $bgblue
+client.focused_inactive $dimblue        $dimblue        $white       $dimblue
+client.urgent           $fgblue         $fgblue         $white       $fgblue
 
 
 # i3bar
@@ -223,17 +237,31 @@ bar {
             # urgent_workspace    $black      $black          $yellow
 
             # Mint
-            background $mintgray
-            separator  $mint
+            # background $mintgray
+            # separator  $mint
             #                   border      background      text
-            focused_workspace   $mint       $mint           $white
-            inactive_workspace  $mintgray   $mintgray       $white
-            urgent_workspace    $mintdgray  $yellow         $white
+            # focused_workspace   $mint       $mint           $white
+            # inactive_workspace  $mintgray   $mintgray       $white
+            # urgent_workspace    $mintdgray  $yellow         $white
+
+
+            # Nord
+            background $bgblue
+            separator  $dimblue
+            #                   border      background      text
+            focused_workspace   $dimblue    $dimblue        $white
+            inactive_workspace  $bgblue     $bgblue         $white
+            urgent_workspace    $fgblue     $bgblue         $white
         }
 }
 
 # Border
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
+
+# Default state
+
+# for_window [class="(?i)steam"] floating enable
+# for_window [class="(?i)lutris"] floating enable
 
 # Set inner/outer gaps
 gaps inner 12
