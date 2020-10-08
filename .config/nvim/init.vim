@@ -1,6 +1,10 @@
 syntax enable
 filetype plugin on
 
+call plug#begin("~/.vim/plugged")
+Plug 'arcticicestudio/nord-vim'
+call plug#end()
+
 " === BROWSING
 set path+=**
 set wildmenu
@@ -56,6 +60,7 @@ hi Comment      ctermbg=none  ctermfg=8
 hi Cursor       ctermbg=none  ctermfg=0
 hi Folded       ctermbg=none  ctermfg=8
 hi MatchParen   ctermbg=none  ctermfg=2     cterm=bold
+colorscheme nord
 
 
 " === COMMANDS
