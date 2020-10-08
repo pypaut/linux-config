@@ -110,7 +110,7 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[01;32m\][\[\e[01;m\]\[\e[01;32m\]\w\[\e[01;m\]\[\e[01;32m\]]\[\e[01;m\]\[\e[01;32m\]\`parse_git_branch\`\[\e[01;m\]"
+export PS1="\[\e[01;34m\][\[\e[01;m\]\[\e[01;34m\]\w\[\e[01;m\]\[\e[01;34m\]]\[\e[01;m\]\[\e[01;34m\]\`parse_git_branch\`\[\e[01;m\]"
 
 export PS1="${PS1}\n> "
 
@@ -175,5 +175,5 @@ alias vim='vim'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Variables
-export EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR=nvim
+export GIT_EDITOR=nvim
