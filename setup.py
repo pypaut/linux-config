@@ -50,6 +50,10 @@ mkdir -p ~/.themes \
 unzip .icons/NordArc-Icons-1.0.zip -d ~/.icons
 unzip .themes/NordArc-Theme-1.0.zip -d ~/.themes
 
+# Gnome terminal theme
+echo '##### NORD THEME FOR GNOME-TERMINAL...'
+./nord.sh
+
 # Config files
 echo '##### COPYING CONFIGURATION FILES...'
 mkdir -p ~/.config/i3/ \
