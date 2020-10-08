@@ -36,6 +36,20 @@ sudo apt install -y \
         tmux
 
 
+# Neovim plugin manager
+echo '##### INSTALLING NEOVIM PLUGIN MANAGER...'
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+
+# GTK theme files
+echo '##### INSTALLING GTK THEMES...'
+mkdir -p ~/.themes \
+        ~/.icons
+
+unzip .icons/NordArc-Icons-1.0.zip -d ~/.icons
+unzip .themes/NordArc-Theme-1.0.zip -d ~/.themes
+
 # Config files
 echo '##### COPYING CONFIGURATION FILES...'
 mkdir -p ~/.config/i3/ \
