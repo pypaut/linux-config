@@ -162,6 +162,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Set tab title
+function set-title() {
+  if [[ -z "$ORIG" ]]; then
+    ORIG=$PS1
+  fi
+  TITLE="\[\e]2;$*\a\]"
+  PS1=${ORIG}${TITLE}
+}
+
 # Aliases
 alias glog='git log --oneline'
 alias ls='ls --color=auto'
@@ -173,6 +182,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias vim='vim'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias neofetch='neofetch --ascii ~/Pictures/System/neofetch'
+alias meteo='curl wttr.in'
 
 # Variables
 export EDITOR=nvim
