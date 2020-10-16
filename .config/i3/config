@@ -3,6 +3,7 @@ exec_always compton
 exec_always "xrdb ~/.Xresources"
 exec_always "xmodmap -e 'clear Lock'"
 exec_always "xmodmap -e 'keycode 0x42=Escape'"
+exec_always "sh /home/pypaut/Programs/scrolling.sh"
 
 set $mod Mod4
 
