@@ -14,9 +14,6 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Start a terminal
-bindsym $mod+Return exec gnome-terminal
-
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -53,7 +50,7 @@ bindsym $mod+f fullscreen toggle
 # Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+g layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -107,6 +104,9 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # assign [class="Firefox"] $workspace1
 # assign [class="Rhythmbox"] $workspace10
 assign [class="(?i)steam"] $workspace4
+assign [class="(?i)lutris"] $workspace4
+assign [class="(?i)teams"] $workspace9
+assign [class="(?i)mail"] $workspace9
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -164,11 +164,11 @@ bindsym $mod+Shift+p exec --no-startup-id ~/Programs/monitor.sh
 # Screenshot
 bindsym --release $mod+Shift+s exec scrot -sf -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots/'
 
-# Browser
+# Applications
+bindsym $mod+Return exec gnome-terminal
 bindsym $mod+w exec firefox
-
-# Atom
 bindsym $mod+a exec atom
+bindsym $mod+e exec nemo
 
 
 ##########
