@@ -6,16 +6,18 @@ filetype plugin on
 call plug#begin("~/.vim/plugged")
 Plug 'arcticicestudio/nord-vim'
 Plug 'frazrepo/vim-rainbow'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
 " === PLUGINS SETUP
-" --- Airline
-let g:airline_theme='nord'
+" --- Lightline
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+set noshowmode
 
 " --- vim-rainbow
 let g:rainbow_active = 1
@@ -27,10 +29,11 @@ nnoremap gs :G<CR>
 
 " === BROWSING
 let g:netrw_banner=0
+noremap <C-p> :find 
 set path=**
 set updatetime=100
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildmenu
-noremap <C-p> :find 
 
 
 " === SEARCHING
