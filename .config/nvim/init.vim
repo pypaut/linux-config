@@ -30,6 +30,7 @@ let g:netrw_banner=0
 set path=**
 set updatetime=100
 set wildmenu
+noremap <C-p> :find 
 
 
 " === SEARCHING
@@ -40,6 +41,8 @@ set smartcase
 
 
 " === GENERAL
+inoremap {;<CR> {<CR>};<ESC>O
+inoremap {<CR> {<CR>}<ESC>O
 set autoindent
 set autoread
 set cursorline
@@ -89,14 +92,8 @@ autocmd BufRead *.cc call SetRunC()
 autocmd BufRead *.hh call SetRunC()
 noremap <C-S-m> :Run<CR>
 
-" --- Brackets
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
-" --- Finder
-noremap <C-p> :find 
-
-" --- Open config  FIXME: how to refresh current vim instance?
+" --- Open config
+" FIXME: how to refresh current vim instance?
 " It seems `:source %` on config file doesn't do the trick.
 command! Config tabnew /home/pypaut/.config/nvim/init.vim
 
