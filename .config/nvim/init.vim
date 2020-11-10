@@ -94,6 +94,7 @@ autocmd BufRead *.c call SetRunC()
 autocmd BufRead *.cc call SetRunC()
 autocmd BufRead *.hh call SetRunC()
 noremap <C-S-m> :Run<CR>
+unmap <Enter>
 
 " --- Open config
 " FIXME: how to refresh current vim instance?
