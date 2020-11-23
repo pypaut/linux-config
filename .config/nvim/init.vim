@@ -42,10 +42,11 @@ set incsearch
 set nohlsearch
 set smartcase
 
+" === BRACKETS
+inoremap {; {<CR>};<ESC>O
+inoremap {<CR> {<CR>}<ESC>O
 
 " === GENERAL
-inoremap {;<CR> {<CR>};<ESC>O
-inoremap {<CR> {<CR>}<ESC>O
 set autoindent
 set autoread
 set cursorline
@@ -62,7 +63,7 @@ set smarttab
 set softtabstop=4
 set statusline=%F
 set tabstop=4
-set timeoutlen=0
+set guicursor=
 
 
 " === SPECIAL CHARACTERS
@@ -72,7 +73,8 @@ set listchars=tab:>-
 
 " === COLORS
 colorscheme nord
-hi CursorLine ctermbg=None ctermfg=none cterm=bold
+hi CursorLine ctermbg=None ctermfg=none cterm=None
+
 
 " === WARNINGS
 hi ExtraWhitespace ctermbg=red guibg=red
@@ -93,13 +95,12 @@ autocmd BufRead *.h call SetRunC()
 autocmd BufRead *.c call SetRunC()
 autocmd BufRead *.cc call SetRunC()
 autocmd BufRead *.hh call SetRunC()
-noremap <C-S-m> :Run<CR>
-unmap <Enter>
 
 " --- Open config
 " FIXME: how to refresh current vim instance?
 " It seems `:source %` on config file doesn't do the trick.
 command! Config tabnew /home/pypaut/.config/nvim/init.vim
+
 
 
 " === FUNCTIONS
