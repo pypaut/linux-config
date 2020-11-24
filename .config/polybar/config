@@ -11,7 +11,7 @@
 [colors]
 background = #402E3440
 foreground = #ffffff
-foreground-alt = #BDBDBD
+foreground-alt = #636363
 primary = #5E81AC
 secondary = #e60053
 alert = #bd2c40
@@ -90,7 +90,9 @@ label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.alert}
+label-state-urgent-foreground = ${colors.alert}
 label-urgent-padding = 0
 
 ; Separator in between workspaces
