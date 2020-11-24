@@ -1,0 +1,245 @@
+; =============== ;
+; === SYMBOLS === ;
+; =============== ;
+; ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
+
+
+; ============== ;
+; === COLORS === ;
+; ============== ;
+
+[colors]
+background = #4c566a
+background-alt = #00000000
+foreground = #ffffff
+foreground-alt = #eceff4
+primary = #5E81AC
+secondary = #e60053
+alert = #bd2c40
+good = #aaff77
+meh = #fba922
+bad = #ff5555
+
+
+; =============== ;
+; === GENERAL === ;
+; =============== ;
+
+[bar/mybar]
+height = 20
+padding-left = 0
+padding-right = 2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = "JetBrainsMono Nerd Font:size=9;2"
+font-1 = "JetBrainsMono Nerd Font:size=11;3"
+font-2 = "JetBrainsMono Nerd Font:size=13;3"
+font-3 = "JetBrainsMono Nerd Font:size=14;3.8"
+
+modules-left = i3
+modules-center = memory sep cpu sep temperature
+modules-right = pulseaudio sep wlan sep eth sep battery sep date
+
+;tray-position = left
+;tray-padding = 2
+
+
+; ==================== ;
+; === LEFT MODULES === ;
+; ==================== ;
+
+[module/sep]
+type = custom/text
+content = "  |  "
+
+; === WORKSPACES === ;
+[module/i3]
+type = internal/i3
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-5 = 6
+ws-icon-6 = 7
+ws-icon-7 = 8
+ws-icon-8 = 9
+ws-icon-9 = 10
+index-sort = true
+wrapping-scroll = false
+
+format = <label-state> <label-mode>
+
+label-focused-background = ${colors.background}
+label-focused-foreground= #fff
+label-focused-padding = 1
+label-focused-underline = #fff
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused-foreground = #BDBDBD
+label-unfocused-padding = 1
+
+; visible = Active workspace on unfocused monitor
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+
+; ====================== ;
+; === CENTER MODULES === ;
+; ====================== ;
+
+; === RAM === ;
+[module/memory]
+type = internal/memory
+interval = 2
+
+format-prefix = "RAM "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage_used%%
+
+
+; === CPU === ;
+[module/cpu]
+type = internal/cpu
+interval = 1.5
+format = <label>  <ramp-coreload>
+
+format-prefix = "CPU "
+label-font = 1
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 1
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 1
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 1
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 1
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 1
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 1
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 1
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 1
+ramp-coreload-7-foreground = #ff5555
+
+
+; === TEMPERATURE === ;
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <label>
+format-underline = #f50a4d
+format-warn = <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+
+; ===================== ;
+; === RIGHT MODULES === ;
+; ===================== ;
+
+; === ETHERNET === ;
+[module/eth]
+type = internal/network
+interface = eno1
+interval = 3.0
+
+format-connected-prefix = "E:  "
+label-connected = %local_ip%
+
+format-disconnected = NO WIRED
+
+
+; === SOUND === ;
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${colors.foreground}
+
+label-muted = mut
+label-muted-foreground = #666
+
+
+; === WLAN === ;
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 3.0
+
+format-connected = <label-connected>  <ramp-signal>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+format-disconnected = NO WIFI
+
+; ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
+ramp-signal-0 = █
+ramp-signal-0-font = 1
+ramp-signal-0-foreground = ${colors.good}
+ramp-signal-1 = ▆
+ramp-signal-1-font = 1
+ramp-signal-1-foreground = ${colors.good}
+ramp-signal-2 = ▄
+ramp-signal-2-font = 1
+ramp-signal-2-foreground = ${colors.meh}
+ramp-signal-3 = ▂
+ramp-signal-3-font = 1
+ramp-signal-3-foreground = ${colors.bad}
+ramp-signal-4 = ▁
+ramp-signal-4-font = 1
+ramp-signal-4-foreground = ${colors.bad}
+
+
+; === BATTERY === ;
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <label-charging>
+format-charging-prefix-foreground = ${colors.background}
+label-charging = CHR %{T1}%percentage%%%{T-}
+
+format-discharging = <label-discharging>
+format-discharging-prefix-foreground = ${colors.background}
+label-discharging = %{T1}%percentage%%%{T-}
+
+format-full = <label-full>
+format-full-prefix-foreground = ${colors.background}
+label-full = FULL %{T1}%percentage%%%{T-}
+
+
+; === DATE === ;
+[module/date]
+type = internal/date
+time = %H:%M:%S
+date = %Y-%m-%d%
+
+label = %date%  |  %time%
+
