@@ -13,7 +13,7 @@ rofi.color-window: #2e3440,      #4c566a
 
 
 ! == RICING == !
-rofi.width:                     30
+rofi.width:                     20
 rofi.lines:                     5
 rofi.columns:                   1
 rofi.font:                      Iosevka Nerd Font Mono Medium 12
