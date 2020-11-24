@@ -19,7 +19,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Program launcher
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -display-drun ""
 # bindsym $mod+d exec dmenu_run
 
 # Change focus
@@ -226,7 +226,6 @@ client.focused_inactive $dimblue        $dimblue        $white       $dimblue
 client.urgent           $fgblue         $fgblue         $white       $fgblue
 
 
-
 # Border
 for_window [class="^.*"] border pixel 3
 
@@ -236,7 +235,7 @@ for_window [class="^.*"] border pixel 3
 # for_window [class="(?i)lutris"] floating enable
 
 # Set inner/outer gaps
-gaps inner 12
+gaps inner 8
 gaps outer 1
 
 # Additionally, you can issue commands with the following syntax.
