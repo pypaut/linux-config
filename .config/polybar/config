@@ -38,9 +38,9 @@ font-1 = "JetBrainsMono Nerd Font:size=11;3"
 font-2 = "JetBrainsMono Nerd Font:size=13;3"
 font-3 = "JetBrainsMono Nerd Font:size=14;3.8"
 
+bottom = true
 modules-left = i3
-modules-center = memory sep cpu sep temperature
-modules-right = pulseaudio sep wlan sep eth sep battery sep date
+modules-right = memory sep cpu sep temperature sep pulseaudio sep wlan sep eth sep battery sep date
 
 ;tray-position = left
 ;tray-padding = 2
