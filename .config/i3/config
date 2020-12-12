@@ -1,10 +1,11 @@
 # Startup
-exec_always compton
-exec_always "xrdb ~/.Xresources"
+exec_always "sh /home/pypaut/Programs/scrolling.sh"
 exec_always "xmodmap -e 'clear Lock'"
 exec_always "xmodmap -e 'keycode 0x42=Escape'"
-exec_always "sh /home/pypaut/Programs/scrolling.sh"
+exec_always "xrdb ~/.Xresources"
 exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
+exec_always compton
+exec_always nm-applet
 
 set $mod Mod4
 
@@ -107,8 +108,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # assign [class="Rhythmbox"] $workspace10
 assign [class="(?i)steam"] $workspace4
 assign [class="(?i)lutris"] $workspace4
-assign [class="(?i)teams"] $workspace9
-assign [class="(?i)mail"] $workspace9
+assign [class="(?i)teams"] $workspace10
+assign [class="(?i)mail"] $workspace5
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -231,7 +232,9 @@ for_window [class="^.*"] border pixel 3
 
 # Default state
 
-# for_window [class="(?i)steam"] floating enable
+for_window [class="(?i)terminal"] floating enable
+for_window [class="(?i)nemo"] floating enable
+for_window [class="(?i)POGLA"] floating enable
 # for_window [class="(?i)lutris"] floating enable
 
 # Set inner/outer gaps
