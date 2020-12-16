@@ -20,8 +20,8 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Program launcher
-bindsym $mod+d exec rofi -show drun -display-drun ""
-# bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec rofi -show drun -display-drun ""
+bindsym $mod+d exec dmenu_run -i -c
 
 # Change focus
 bindsym $mod+h focus left
@@ -168,9 +168,8 @@ bindsym $mod+Shift+p exec --no-startup-id ~/Programs/monitor.sh
 bindsym --release $mod+Shift+s exec scrot -sf -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots/'
 
 # Applications
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec st
 bindsym $mod+w exec firefox
-bindsym $mod+a exec atom
 bindsym $mod+e exec nemo
 
 
@@ -232,7 +231,7 @@ for_window [class="^.*"] border pixel 3
 
 # Default state
 
-for_window [class="(?i)terminal"] floating enable
+for_window [class="(?i)st"] floating enable
 for_window [class="(?i)nemo"] floating enable
 for_window [class="(?i)POGLA"] floating enable
 # for_window [class="(?i)lutris"] floating enable
