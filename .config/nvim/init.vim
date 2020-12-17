@@ -59,6 +59,7 @@ set smarttab
 set softtabstop=4
 set statusline=%F
 set tabstop=4
+set ttimeoutlen=0
 
 
 " === SPECIAL CHARACTERS
