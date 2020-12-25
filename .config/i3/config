@@ -1,11 +1,13 @@
-# Startup
-exec_always "sh /home/pypaut/Programs/scrolling.sh"
-exec_always "xmodmap -e 'clear Lock'"
-exec_always "xmodmap -e 'keycode 0x42=Escape'"
-exec_always "xrdb ~/.Xresources"
-exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
-exec_always compton
-exec_always nm-applet
+# Set configuration & scripts location
+set $config $HOME/.config/i3
+
+# Configuration
+exec_always --no-startup-id $config/compton.sh
+exec_always --no-startup-id $config/nm-applet.sh
+exec_always --no-startup-id $config/polybar.sh
+exec_always --no-startup-id $config/remap.sh
+exec_always --no-startup-id $config/scrolling.sh
+exec_always --no-startup-id $config/volumeicon.sh
 
 set $mod Mod4
 
@@ -21,7 +23,7 @@ bindsym $mod+Shift+q kill
 
 # Program launcher
 # bindsym $mod+d exec rofi -show drun -display-drun ""
-bindsym $mod+d exec dmenu_run -i -c
+bindsym $mod+d exec $config/dmenu.sh
 
 # Change focus
 bindsym $mod+h focus left
@@ -141,8 +143,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock
-bindsym $mod+shift+x exec i3lock -t -i ~/Pictures/System/lock.png
-
+bindsym $mod+shift+x exec $config/i3lock.sh
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # decrease sound volume
@@ -153,7 +154,7 @@ bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1 # increase
 bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.5 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -161,11 +162,11 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Display
-bindsym $mod+Shift+p exec --no-startup-id ~/Programs/monitor.sh
+# Change display
+bindsym $mod+Shift+p exec $config/monitor.sh
 
 # Screenshot
-bindsym --release $mod+Shift+s exec scrot -sf -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots/'
+bindsym --release $mod+Shift+s exec $config/scrot.sh
 
 # Applications
 bindsym $mod+Return exec st
@@ -231,7 +232,7 @@ for_window [class="^.*"] border pixel 3
 
 # Default state
 
-for_window [class="(?i)st"] floating enable
+for_window [class="st"] floating enable
 for_window [class="(?i)nemo"] floating enable
 for_window [class="(?i)POGLA"] floating enable
 # for_window [class="(?i)lutris"] floating enable
