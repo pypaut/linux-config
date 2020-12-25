@@ -120,8 +120,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Leaving already? What a shame.' -b 'Yes, exit i3' 'i3-msg exit'"
+# Power management
+bindsym $mod+Shift+e exec $config/powerman.sh
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
