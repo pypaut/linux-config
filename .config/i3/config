@@ -3,12 +3,12 @@ set $config $HOME/.config/i3
 
 # Configuration
 exec_always --no-startup-id $config/compton.sh
+exec_always --no-startup-id $config/dropbox.sh
 exec_always --no-startup-id $config/nm-applet.sh
 exec_always --no-startup-id $config/polybar.sh
 exec_always --no-startup-id $config/remap.sh
-exec_always --no-startup-id $config/scrolling.sh
+exec_always --no-startup-id $config/touchpad.sh
 exec_always --no-startup-id $config/volumeicon.sh
-exec_always --no-startup-id $config/dropbox.sh
 
 set $mod Mod4
 
