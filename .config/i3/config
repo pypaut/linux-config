@@ -8,6 +8,7 @@ exec_always --no-startup-id $config/polybar.sh
 exec_always --no-startup-id $config/remap.sh
 exec_always --no-startup-id $config/scrolling.sh
 exec_always --no-startup-id $config/volumeicon.sh
+exec_always --no-startup-id $config/dropbox.sh
 
 set $mod Mod4
 
@@ -22,7 +23,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Program launcher
-# bindsym $mod+d exec rofi -show drun -display-drun ""
+bindsym $mod+Shift+d exec $config/rofi.sh
 bindsym $mod+d exec $config/dmenu.sh
 
 # Change focus
@@ -228,7 +229,7 @@ client.urgent           $fgblue         $fgblue         $white       $fgblue
 
 
 # Border
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 
 # Default state
 
