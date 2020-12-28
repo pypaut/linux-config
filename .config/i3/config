@@ -107,12 +107,12 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Assign applications to workspace
-# assign [class="Firefox"] $workspace1
-# assign [class="Rhythmbox"] $workspace10
-assign [class="(?i)steam"] $workspace4
-assign [class="(?i)lutris"] $workspace4
-assign [class="(?i)teams"] $workspace10
+assign [class="(?i)zathura"] $workspace2
 assign [class="(?i)mail"] $workspace5
+assign [class="(?i)steam"] $workspace6
+assign [class="(?i)lutris"] $workspace6
+assign [class="(?i)vlc"] $workspace9
+assign [class="(?i)teams"] $workspace9
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
