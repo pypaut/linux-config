@@ -27,7 +27,7 @@ bad = #ff5555
 [bar/mybar]
 height = 20
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -41,7 +41,7 @@ font-4 = "FontAwesome:size=11;3"
 bottom = false
 modules-left = memory sep cpu sep temperature sep pulseaudio
 modules-center = i3
-modules-right = wrl sep wrd sep battery sep date sep time sep
+modules-right = wrl sep wrd sep battery sep date sep time sep2
 
 tray-position = right
 tray-padding = 0
@@ -54,6 +54,12 @@ tray-padding = 0
 [module/sep]
 type = custom/text
 content = " | "
+content-font = 0
+content-foreground = ${colors.foreground-alt}
+
+[module/sep2]
+type = custom/text
+content = " |"
 content-font = 0
 content-foreground = ${colors.foreground-alt}
 
