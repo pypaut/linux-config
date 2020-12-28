@@ -23,7 +23,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Program launcher
-bindsym $mod+Shift+d exec $config/rofi.sh
+bindsym $mod+Shift+d exec $config/j4-dmenu-desktop.sh
 bindsym $mod+d exec $config/dmenu.sh
 
 # Change focus
