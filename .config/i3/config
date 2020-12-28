@@ -171,7 +171,7 @@ bindsym --release $mod+Shift+s exec $config/scrot.sh
 
 # Applications
 bindsym $mod+Return exec st
-bindsym $mod+w exec firefox
+bindsym $mod+w exec chromium
 bindsym $mod+e exec nemo
 
 
@@ -227,12 +227,10 @@ client.unfocused        $bgblue         $bgblue         $white       $bgblue
 client.focused_inactive $dimblue        $dimblue        $white       $dimblue
 client.urgent           $fgblue         $fgblue         $white       $fgblue
 
-
 # Border
 for_window [class="^.*"] border pixel 1
 
 # Default state
-
 for_window [class="st"] floating enable
 for_window [class="(?i)nemo"] floating enable
 for_window [class="(?i)POGLA"] floating enable
