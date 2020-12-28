@@ -9,7 +9,7 @@
 ; ============== ;
 
 [colors]
-background = #402E3440
+background = #2E3440
 foreground = #ffffff
 foreground-alt = #4c566a
 primary = #5E81AC
@@ -27,7 +27,7 @@ bad = #ff5555
 [bar/mybar]
 height = 20
 padding-left = 0
-padding-right = 1
+padding-right = 2
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -38,13 +38,13 @@ font-2 = "Iosevka Nerd Font Mono:style=Bold Oblique:size=9;3"
 font-3 = "Iosevka Nerd Font:size=12;3"
 font-4 = "FontAwesome:size=11;3"
 
-bottom = true
+bottom = false
 modules-left = memory sep cpu sep temperature sep pulseaudio
 modules-center = i3
-modules-right = wrl sep wrd sep battery sep date sep time
+modules-right = wrl sep wrd sep battery sep date sep time sep
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 
 
 ; ==================== ;
@@ -59,17 +59,18 @@ content-foreground = ${colors.foreground-alt}
 
 ; === WORKSPACES === ;
 [module/i3]
+strip-wsnumbers = true
 type = internal/i3
-ws-icon-0 = 1
-ws-icon-1 = 2
-ws-icon-2 = 3
-ws-icon-3 = 4
-ws-icon-4 = 5
-ws-icon-5 = 6
-ws-icon-6 = 7
-ws-icon-7 = 8
-ws-icon-8 = 9
-ws-icon-9 = 10
+;ws-icon-0 = 
+;ws-icon-1 = 
+;ws-icon-2 = 
+;ws-icon-3 = 
+;ws-icon-4 = 
+;ws-icon-5 = 6
+;ws-icon-6 = 7
+;ws-icon-7 = 8
+;ws-icon-8 = 
+;ws-icon-9 = 
 index-sort = true
 wrapping-scroll = false
 
@@ -77,14 +78,14 @@ format = <label-state> <label-mode>
 
 label-focused-background = ${colors.background}
 label-focused-foreground= #fff
-label-focused-padding = 0
+label-focused-padding = 2
 label-focused-underline = #fff
-label-focused-font = 3
+label-focused-font = 4
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused-foreground = ${colors.foreground-alt}
-label-unfocused-padding = 0
-label-unfocused-font = 3
+label-unfocused-padding = 2
+label-unfocused-font = 4
 
 ; visible = Active workspace on unfocused monitor
 label-visible-background = ${self.label-focused-background}
@@ -94,7 +95,8 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent-background = ${colors.background}
 label-urgent-foreground = ${colors.alert}
 label-state-urgent-foreground = ${colors.alert}
-label-urgent-padding = 0
+label-urgent-padding = 2
+label-urgent-font = 4
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -278,4 +280,3 @@ label = %date%
 type = internal/date
 time = %H:%M:%S
 label = %time%
-
