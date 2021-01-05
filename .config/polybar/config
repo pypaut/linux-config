@@ -39,9 +39,9 @@ font-3 = "Iosevka Nerd Font:size=12;3"
 font-4 = "FontAwesome:size=11;3"
 
 bottom = false
-modules-left = memory sep cpu sep temperature sep pulseaudio
-modules-center = i3
-modules-right = wrl sep wrd sep battery sep date sep time sep2
+modules-left = i3
+; modules-center = i3
+modules-right = pulseaudio sep memory sep cpu sep temperature sep wrl sep wrd sep battery sep date sep time sep2
 
 tray-position = right
 tray-padding = 0
