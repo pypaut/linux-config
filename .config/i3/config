@@ -5,6 +5,7 @@ set $config $HOME/.config/i3
 exec_always --no-startup-id $config/compton.sh
 exec_always --no-startup-id $config/dropbox.sh
 exec_always --no-startup-id $config/nm-applet.sh
+exec_always --no-startup-id $config/pavucontrol.sh
 exec_always --no-startup-id $config/polybar.sh
 exec_always --no-startup-id $config/remap.sh
 exec_always --no-startup-id $config/touchpad.sh
@@ -113,6 +114,7 @@ assign [class="(?i)steam"] $workspace6
 assign [class="(?i)lutris"] $workspace6
 assign [class="(?i)vlc"] $workspace9
 assign [class="(?i)teams"] $workspace9
+assign [class="(?i)pavucontrol"] $workspace10
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -185,7 +187,8 @@ font pango:System San Francisco Display 7
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/System/wallpaper.png
+# exec_always feh --bg-fill ~/Pictures/System/wallpaper.png
+exec --no-startup-id nitrogen --restore
 
 # Color variables
 
