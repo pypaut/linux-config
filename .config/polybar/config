@@ -183,7 +183,7 @@ label-warn-foreground = ${colors.secondary}
 ; === WIRED === ;
 [module/wrd]
 type = internal/network
-interface = eno1
+interface = enp0s25
 interval = 3.0
 
 format-connected-prefix = "WRD "
@@ -216,7 +216,7 @@ label-muted = MUT
 ; === WRL === ;
 [module/wrl]
 type = internal/network
-interface = wlo1
+interface = wlan0
 interval = 3.0
 
 format-connected = <label-connected>
