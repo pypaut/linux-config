@@ -5,11 +5,9 @@ set $config $HOME/.config/i3
 exec_always --no-startup-id $config/compton.sh
 exec_always --no-startup-id $config/dropbox.sh
 exec_always --no-startup-id $config/nm-applet.sh
-exec_always --no-startup-id $config/pavucontrol.sh
 exec_always --no-startup-id $config/polybar.sh
 exec_always --no-startup-id $config/remap.sh
 exec_always --no-startup-id $config/touchpad.sh
-exec_always --no-startup-id $config/volumeicon.sh
 
 set $mod Mod4
 
@@ -82,6 +80,16 @@ set $workspace7 "7:"
 set $workspace8 "8:"
 set $workspace9 "9:"
 set $workspace10 "10:"
+# set $workspace1 "1"
+# set $workspace2 "2"
+# set $workspace3 "3"
+# set $workspace4 "4"
+# set $workspace5 "5"
+# set $workspace6 "6"
+# set $workspace7 "7"
+# set $workspace8 "8"
+# set $workspace9 "9"
+# set $workspace10 "10"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -124,7 +132,7 @@ bindsym $mod+Shift+r restart
 
 
 # Power management
-bindsym $mod+Shift+e exec $config/powerman.sh
+bindsym $mod+Shift+e exec rofi_run -l
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
@@ -154,8 +162,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # mute mic
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh
@@ -175,7 +183,7 @@ bindsym --release $mod+Shift+s exec $config/scrot.sh
 # Applications
 bindsym $mod+Return exec st
 bindsym $mod+w exec chromium
-bindsym $mod+e exec nemo
+bindsym $mod+e exec thunar
 
 
 ##########
@@ -183,13 +191,13 @@ bindsym $mod+e exec nemo
 ##########
 
 # Title & bar font
-font pango:System San Francisco Display 7
+font pango:Ubunto Mono 9
 #font pango:DejaVu Sans Mono 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-# exec_always feh --bg-fill ~/Pictures/System/wallpaper.png
-exec --no-startup-id nitrogen --restore
+exec_always feh --bg-fill ~/Pictures/archlabs/archlabs.png
+# exec --no-startup-id nitrogen --restore
 
 # Color variables
 
@@ -231,13 +239,39 @@ client.unfocused        $bgblue         $bgblue         $white       $bgblue
 client.focused_inactive $dimblue        $dimblue        $white       $dimblue
 client.urgent           $fgblue         $fgblue         $white       $fgblue
 
+# bar {
+#         strip_workspace_numbers yes
+#         status_command i3status
+# 
+#     colors {
+#         # Blacked out
+#         # background $black
+#         # separator  $darkgray
+#         # #                   border      background      text
+#         # focused_workspace   $black      $black          $white
+#         # inactive_workspace  $black      $black          $grey
+#         # urgent_workspace    $black      $black          $yellow
+# 
+# 
+# 
+#         # Nord
+#         background $bgblue
+#         separator  $dimblue
+#         #                   border      background      text
+#         focused_workspace   $dimblue    $dimblue        $white
+#         inactive_workspace  $bgblue     $bgblue         $white
+#         urgent_workspace    $fgblue     $bgblue         $white
+#     }
+# 
+# }
+
+
 # Border
 for_window [class="^.*"] border pixel 1
 
 # Default state
-for_window [class="st"] floating enable
-for_window [class="(?i)nemo"] floating enable
-for_window [class="(?i)POGLA"] floating enable
+# for_window [class="st"] floating enable
+# for_window [class="(?i)thunar"] floating enable
 # for_window [class="(?i)lutris"] floating enable
 
 # Set inner/outer gaps
