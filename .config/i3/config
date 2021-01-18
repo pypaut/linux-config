@@ -2,6 +2,7 @@
 set $config $HOME/.config/i3
 
 # Configuration
+exec_always --no-startup-id $config/battery-applet.sh
 exec_always --no-startup-id $config/compton.sh
 exec_always --no-startup-id $config/dropbox.sh
 exec_always --no-startup-id $config/nm-applet.sh
