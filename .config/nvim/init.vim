@@ -83,4 +83,7 @@ colorscheme nord
 
 " === CUSTOM COMMANDS
 command! Black !black -l 79 %:p
-command! Pdf !/home/pypaut/.scripts/makepdf.sh %:p
+command! MakePDF !/home/pypaut/.scripts/makepdf.sh %:p
+command! PDF !/home/pypaut/.scripts/openpdf.sh %:p
+
+au BufWritePost *.ms silent MakePDF
