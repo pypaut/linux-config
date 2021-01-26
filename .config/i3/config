@@ -23,8 +23,8 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Program launcher
-bindsym $mod+Shift+d exec $config/j4-dmenu-desktop.sh
-bindsym $mod+d exec $config/dmenu.sh
+bindsym $mod+Shift+d exec $scripts/j4-dmenu-desktop.sh
+bindsym $mod+d exec $scripts/dmenu.sh
 
 # Change focus
 bindsym $mod+h focus left
@@ -155,7 +155,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock
-bindsym $mod+shift+x exec $config/i3lock.sh
+bindsym $mod+shift+x exec $scripts/i3lock.sh
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # decrease sound volume
@@ -176,10 +176,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Change display
-bindsym $mod+Shift+p exec $config/monitor.sh
+bindsym $mod+Shift+p exec $scripts/monitor.sh
 
 # Screenshot
-bindsym --release $mod+Shift+s exec $config/scrot.sh
+bindsym --release $mod+Shift+s exec $scripts/scrot.sh
 
 # Applications
 bindsym $mod+Return exec st
