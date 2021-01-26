@@ -4,9 +4,9 @@ syntax enable
 call plug#begin("~/.vim/plugged")
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/glsl.vim'
 call plug#end()
 
 
@@ -17,8 +17,8 @@ let g:lightline = {
       \ }
 set noshowmode
 
-" --- vim-rainbow
-let g:rainbow_active = 1
+" --- glsl
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl,*.shd setf glsl
 
 
 " === BROWSING
@@ -59,6 +59,7 @@ set softtabstop=4
 set statusline=%F
 set tabstop=4
 set ttimeoutlen=0
+set guicursor=
 
 
 " === SPECIAL CHARACTERS
@@ -82,4 +83,4 @@ colorscheme nord
 
 " === CUSTOM COMMANDS
 command! Black !black -l 79 %:p
-command! Pdf !/home/pypaut/Programs/md_to_pdf.sh %:p | xargs zathura &
+command! Pdf !/home/pypaut/.scripts/makepdf.sh %:p
