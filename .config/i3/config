@@ -1,14 +1,14 @@
 # Set configuration & scripts location
-set $config $HOME/.config/i3
+set $scripts $HOME/.scripts
 
 # Configuration
-exec_always --no-startup-id $config/battery-applet.sh
-exec_always --no-startup-id $config/compton.sh
-exec_always --no-startup-id $config/dropbox.sh
-exec_always --no-startup-id $config/nm-applet.sh
-exec_always --no-startup-id $config/polybar.sh
-exec_always --no-startup-id $config/remap.sh
-exec_always --no-startup-id $config/touchpad.sh
+exec_always --no-startup-id $scripts/battery-applet.sh
+exec_always --no-startup-id $scripts/compton.sh
+exec_always --no-startup-id $scripts/dropbox.sh
+exec_always --no-startup-id $scripts/nm-applet.sh
+exec_always --no-startup-id $scripts/polybar.sh
+exec_always --no-startup-id $scripts/remap.sh
+exec_always --no-startup-id $scripts/touchpad.sh
 
 set $mod Mod4
 
