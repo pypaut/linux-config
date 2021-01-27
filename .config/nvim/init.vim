@@ -85,5 +85,6 @@ colorscheme nord
 command! Black !black -l 79 %:p
 command! MakePDF !/home/pypaut/.scripts/makepdf.sh %:p
 command! PDF !/home/pypaut/.scripts/openpdf.sh %:p
+command! GetMSHeader !/home/pypaut/.scripts/getheader.sh %:p
 
 au BufWritePost *.ms silent MakePDF
