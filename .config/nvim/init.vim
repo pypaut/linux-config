@@ -7,6 +7,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/glsl.vim'
+Plug 'yggdroot/indentline'
 call plug#end()
 
 
@@ -19,6 +20,9 @@ set noshowmode
 
 " --- glsl
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl,*.shd setf glsl
+
+" --- indentline
+let g:indentLine_char = '|'
 
 
 " === BROWSING
@@ -59,7 +63,8 @@ set softtabstop=4
 set statusline=%F
 set tabstop=4
 set ttimeoutlen=0
-set guicursor=
+" set timeoutlen=0
+" set guicursor=
 
 
 " === SPECIAL CHARACTERS
@@ -82,9 +87,12 @@ colorscheme nord
 
 
 " === CUSTOM COMMANDS
+" --- Python
 command! Black !black -l 79 %:p
-command! MakePDF !/home/pypaut/.scripts/makepdf.sh %:p
-command! PDF !/home/pypaut/.scripts/openpdf.sh %:p
-command! GetMSHeader !/home/pypaut/.scripts/getheader.sh %:p
 
+" --- Groff
+command! MakePDF !/home/pypaut/.scripts/makepdf.sh %:p
 au BufWritePost *.ms silent MakePDF
+command! OpenPDF !/home/pypaut/.scripts/openpdf.sh %:p
+command! GetMS !/home/pypaut/.scripts/getheader.sh %:p
+
