@@ -23,8 +23,8 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Program launcher
-bindsym $mod+Shift+d exec $scripts/j4-dmenu-desktop.sh
-bindsym $mod+d exec $scripts/dmenu.sh
+bindsym $mod+d exec $scripts/j4-dmenu-desktop.sh
+bindsym $mod+Shift+d exec $scripts/dmenu.sh
 
 # Change focus
 bindsym $mod+h focus left
@@ -117,7 +117,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Assign applications to workspace
-assign [class="(?i)zathura"] $workspace2
+# assign [class="(?i)zathura"] $workspace2
 assign [class="(?i)mail"] $workspace5
 assign [class="(?i)steam"] $workspace6
 assign [class="(?i)lutris"] $workspace6
@@ -183,7 +183,7 @@ bindsym --release $mod+Shift+s exec $scripts/scrot.sh
 
 # Applications
 bindsym $mod+Return exec st
-bindsym $mod+w exec chromium
+bindsym $mod+w exec librewolf
 bindsym $mod+e exec thunar
 
 
@@ -197,7 +197,7 @@ font pango:Ubunto Mono 9
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/archlabs/archlabs.png
+exec_always feh --bg-fill ~/Pictures/wallpaper.png
 # exec --no-startup-id nitrogen --restore
 
 # Color variables
@@ -268,7 +268,7 @@ client.urgent           $fgblue         $fgblue         $white       $fgblue
 
 
 # Border
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 
 # Default state
 # for_window [class="st"] floating enable
