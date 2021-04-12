@@ -184,7 +184,10 @@ alias vim='vim'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias neofetch='neofetch --ascii ~/Pictures/System/neofetch'
 alias meteo='curl wttr.in'
+alias gping='ping www.google.com'
 
 # Variables
 export EDITOR=nvim
 export GIT_EDITOR=nvim
+export PATH="${PATH}:/home/pypaut/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/pypaut/.local/bin"
+source "$HOME/.cargo/env"
