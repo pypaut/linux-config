@@ -189,5 +189,7 @@ alias gping='ping www.google.com'
 # Variables
 export EDITOR=nvim
 export GIT_EDITOR=nvim
+export WEBOTS_HOME=/usr/local/webots
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${WEBOTS_HOME}/lib/controller"
 export PATH="${PATH}:/home/pypaut/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/pypaut/.local/bin"
 source "$HOME/.cargo/env"
