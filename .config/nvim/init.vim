@@ -2,7 +2,6 @@ syntax enable
 
 " === PLUGINS
 call plug#begin("~/.vim/plugged")
-Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
@@ -15,7 +14,7 @@ call plug#end()
 " === PLUGINS SETUP
 " --- Lightline
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'nord',
       \ }
 set noshowmode
 
@@ -65,7 +64,7 @@ set statusline=%F
 set tabstop=4
 set ttimeoutlen=0
 " set timeoutlen=0
-" set guicursor=
+set guicursor=
 
 
 " === SPECIAL CHARACTERS
@@ -85,8 +84,8 @@ hi Comment      ctermbg=none  ctermfg=8
 hi Cursor       ctermbg=none  ctermfg=0
 hi Folded       ctermbg=none  ctermfg=8
 hi MatchParen   ctermbg=none  ctermfg=2     cterm=bold
-colorscheme dracula
-hi Normal       ctermbg=NONE
+colorscheme nord
+" hi Normal       ctermbg=NONE
 
 
 " === CUSTOM COMMANDS
