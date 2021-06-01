@@ -38,10 +38,10 @@ font-2 = "Iosevka Nerd Font Mono:style=Bold Oblique:size=9;3"
 font-3 = "Iosevka Nerd Font:size=12;3"
 font-4 = "FontAwesome:size=11;3"
 
-bottom = false
+bottom = true
 modules-left = i3
-; modules-center = i3
-modules-right = pulseaudio sep memory sep cpu sep temperature sep wrl sep wrd sep battery sep date sep time sep2
+modules-center = time sep date
+modules-right = pulseaudio sep memory sep cpu sep temperature sep wrd sep2
 
 tray-position = right
 tray-padding = 0
@@ -67,16 +67,6 @@ content-foreground = ${colors.foreground-alt}
 [module/i3]
 strip-wsnumbers = true
 type = internal/i3
-;ws-icon-0 = 
-;ws-icon-1 = 
-;ws-icon-2 = 
-;ws-icon-3 = 
-;ws-icon-4 = 
-;ws-icon-5 = 6
-;ws-icon-6 = 7
-;ws-icon-7 = 8
-;ws-icon-8 = 
-;ws-icon-9 = 
 index-sort = true
 wrapping-scroll = false
 
@@ -183,7 +173,7 @@ label-warn-foreground = ${colors.secondary}
 ; === WIRED === ;
 [module/wrd]
 type = internal/network
-interface = enp0s25
+interface = enp3s0
 interval = 3.0
 
 format-connected-prefix = "WRD "
