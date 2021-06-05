@@ -9,6 +9,10 @@
 #   https://github.com/alacritty/alacritty
 
 
+mouse:
+    hide_when_typing: true
+
+
 font:
   size: 10
 
