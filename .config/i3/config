@@ -115,7 +115,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="(?i)mail"] $workspace5
 assign [class="(?i)steam"] $workspace6
 assign [class="(?i)lutris"] $workspace6
-assign [class="(?i)vlc"] $workspace9
+assign [class="(?i)vlc"] $workspace8
 assign [class="(?i)teams"] $workspace9
 assign [class="(?i)pavucontrol"] $workspace10
 
@@ -176,8 +176,8 @@ bindsym $mod+Shift+p exec $scripts/monitor.sh
 bindsym --release $mod+Shift+s exec $scripts/scrot.sh
 
 # Applications
-bindsym $mod+Return exec st
-bindsym $mod+w exec librewolf
+bindsym $mod+Return exec alacritty
+bindsym $mod+w exec firefox
 bindsym $mod+e exec thunar
 
 
@@ -191,7 +191,7 @@ font pango:Ubunto Mono 9
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/wallpaper.png
+exec_always feh --bg-fill ~/Pictures/System/wallpaper.png
 # exec --no-startup-id nitrogen --restore
 
 # Color variables
