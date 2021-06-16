@@ -41,7 +41,7 @@ font-4 = "FontAwesome:size=11;3"
 bottom = true
 modules-left = i3
 modules-center = time sep date
-modules-right = pulseaudio sep memory sep cpu sep temperature sep wrd sep2
+modules-right = pulseaudio sep memory sep cpu sep temperature sep wrl sep wrd sep battery sep2
 
 tray-position = right
 tray-padding = 0
@@ -173,7 +173,7 @@ label-warn-foreground = ${colors.secondary}
 ; === WIRED === ;
 [module/wrd]
 type = internal/network
-interface = enp3s0
+interface = enp0s25
 interval = 3.0
 
 format-connected-prefix = "WRD "
@@ -206,7 +206,7 @@ label-muted = MUT
 ; === WRL === ;
 [module/wrl]
 type = internal/network
-interface = wlan0
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
