@@ -117,6 +117,7 @@ assign [class="(?i)steam"] $workspace6
 assign [class="(?i)lutris"] $workspace6
 assign [class="(?i)vlc"] $workspace8
 assign [class="(?i)teams"] $workspace9
+assign [class="(?i)discord"] $workspace9
 assign [class="(?i)pavucontrol"] $workspace10
 
 # Reload the configuration file
