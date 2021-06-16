@@ -14,22 +14,22 @@ mouse:
 
 
 font:
-  size: 9
+  size: 8
 
   normal:
-    family: Monospace
+    family: Iosevka
     style: Regular
 
   bold:
-    family: Monospace
+    family: Iosevka
     style: Bold
 
   italic:
-    family: Monospace
+    family: Iosevka
     style: Italic
 
   bold_italic:
-    family: Monospace
+    family: Iosevka
     style: Bold Italic
 
 
