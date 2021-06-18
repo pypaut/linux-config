@@ -7,7 +7,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/glsl.vim'
-Plug 'yggdroot/indentline'
 call plug#end()
 
 
@@ -64,7 +63,7 @@ set statusline=%F
 set tabstop=4
 set ttimeoutlen=0
 " set timeoutlen=0
-set guicursor=
+" set guicursor=
 
 
 " === SPECIAL CHARACTERS
@@ -79,12 +78,12 @@ hi StatusLineNC ctermbg=Black ctermfg=8
 hi LineNr       ctermfg=8
 hi CursorLineNr ctermfg=White
 hi VertSplit    ctermbg=Black ctermfg=Black
-hi CursorLine   ctermbg=Black ctermfg=none  cterm=bold
-hi Comment      ctermbg=none  ctermfg=8
 hi Cursor       ctermbg=none  ctermfg=0
 hi Folded       ctermbg=none  ctermfg=8
 hi MatchParen   ctermbg=none  ctermfg=2     cterm=bold
 colorscheme nord
+hi Comment      ctermbg=none  ctermfg=13
+hi CursorLine   ctermbg=Black ctermfg=none  cterm=none
 " hi Normal       ctermbg=NONE
 
 
