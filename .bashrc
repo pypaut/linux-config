@@ -193,3 +193,12 @@ export WEBOTS_HOME=/usr/local/webots
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${WEBOTS_HOME}/lib/controller"
 export PATH="${PATH}:/home/pypaut/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/pypaut/.local/bin"
 source "$HOME/.cargo/env"
+
+# Color schemes (for man pages)
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
