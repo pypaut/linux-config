@@ -173,6 +173,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Change display
 bindsym $mod+Shift+p exec $scripts/monitor.sh
 
+# Change layout
+bindsym $mod+Space exec $scripts/layout.sh
+
 # Screenshot
 bindsym --release $mod+Shift+s exec $scripts/scrot.sh
 
