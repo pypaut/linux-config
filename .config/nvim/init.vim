@@ -88,8 +88,16 @@ hi CursorLine   ctermbg=Black ctermfg=none  cterm=none
 
 
 " === CUSTOM COMMANDS
+" --- Config
+command! Source source /home/$USER/.config/nvim/init.vim
+
 " --- Python
 command! Black !black -l 79 %:p
+
+" --- Go
+command! GoFmt !go fmt %:p
+au BufWritePost *.go silent GoFmt
+au BufWritePost *.go silent :edit
 
 " --- Groff
 command! MakePDF !/home/pypaut/.scripts/makepdf.sh %:p
