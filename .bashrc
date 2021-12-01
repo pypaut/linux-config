@@ -185,6 +185,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias neofetch='neofetch --ascii ~/Pictures/System/neofetch'
 alias meteo='curl wttr.in'
 alias gping='ping www.google.com'
+alias gotest='grc go test -v ./...'
 
 # Variables
 export EDITOR=nvim
