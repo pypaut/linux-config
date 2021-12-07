@@ -1,0 +1,9 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Nord",
+    "keyboard.dispatch": "keyCode",
+    "editor.lineNumbers": "relative",
+    "go.coverOnSave": true,
+    "go.testOnSave": true,
+    "go.testFlags": ["-v"],
+}
