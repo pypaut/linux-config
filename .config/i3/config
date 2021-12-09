@@ -190,9 +190,7 @@ bindsym $mod+e exec thunar
 ##########
 
 # Title & bar font
-font pango:Ubunto Mono 9
-#font pango:DejaVu Sans Mono 8
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Iosevka Nerd Font Mono 9
 
 # Wallpaper
 exec_always feh --bg-fill ~/Pictures/System/wallpaper.png
