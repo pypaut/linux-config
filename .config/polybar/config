@@ -9,15 +9,27 @@
 ; ============== ;
 
 [colors]
-background = #2E3440
-foreground = #ffffff
-foreground-alt = #4c566a
+; -- Nord
+; background = #2E3440
+; foreground = #ffffff
+; foreground-alt = #4c566a
+; primary = #5E81AC
+; secondary = #e60053
+; alert = #bd2c40
+; good = #aaff77
+; meh = #fba922
+; bad = #ff5555
+
+; -- Dracula
+background = #282a36
+foreground = #f8f8f2
+foreground-alt = #6272a4
 primary = #5E81AC
 secondary = #e60053
-alert = #bd2c40
-good = #aaff77
-meh = #fba922
-bad = #ff5555
+alert = #bd93d9
+good_green = #50fa7b
+meh_orange = #ffb86c
+bad_red = #ff5555
 
 
 ; =============== ;
@@ -47,21 +59,21 @@ tray-position = right
 tray-padding = 0
 
 
-; ==================== ;
-; === LEFT MODULES === ;
-; ==================== ;
 
+; === SEP === ;
 [module/sep]
 type = custom/text
 content = " | "
 content-font = 0
 content-foreground = ${colors.foreground-alt}
 
+
 [module/sep2]
 type = custom/text
 content = " |"
 content-font = 0
 content-foreground = ${colors.foreground-alt}
+
 
 ; === WORKSPACES === ;
 [module/i3]
@@ -97,10 +109,6 @@ label-urgent-font = 4
 ; Separator in between workspaces
 ; label-separator = |
 
-
-; ====================== ;
-; === CENTER MODULES === ;
-; ====================== ;
 
 ; === RAM === ;
 [module/memory]
@@ -166,14 +174,17 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 
-; ===================== ;
-; === RIGHT MODULES === ;
-; ===================== ;
+; === LAYOUT === ;
+[module/layout]
+type = custom/script
+exec = /home/$USER/.scripts/layout.sh
+label = %output%
+
 
 ; === WIRED === ;
 [module/wrd]
 type = internal/network
-interface = enp0s25
+interface = enp0s31f6
 interval = 3.0
 
 format-connected-prefix = "WRD "
@@ -206,7 +217,7 @@ label-muted = MUT
 ; === WRL === ;
 [module/wrl]
 type = internal/network
-interface = wlp3s0
+interface = wlp61s0
 interval = 3.0
 
 format-connected = <label-connected>
