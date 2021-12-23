@@ -152,10 +152,10 @@ bindsym $mod+r mode "resize"
 # Lock
 bindsym $mod+shift+x exec $scripts/i3lock.sh
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # mute mic
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 2 toggle # mute mic
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -173,14 +173,11 @@ bindsym XF86AudioPrev exec playerctl previous
 # Change display
 bindsym $mod+Shift+p exec $scripts/monitor.sh
 
-# Change layout
-bindsym $mod+Space exec $scripts/layout.sh
-
 # Screenshot
 bindsym --release $mod+Shift+s exec $scripts/scrot.sh
 
 # Applications
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 bindsym $mod+w exec firefox
 bindsym $mod+e exec thunar
 
@@ -193,7 +190,7 @@ bindsym $mod+e exec thunar
 font pango:Iosevka Nerd Font Mono 9
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/System/wallpaper.png
+exec_always feh --bg-fill /home/geoffrey/Pictures/nord-wallpapers/image-go-nord/ign-0004.png
 # exec --no-startup-id nitrogen --restore
 
 # Color variables
@@ -215,6 +212,20 @@ set $bgblue     #2e3440
 set $dimblue    #4c566a
 set $fgblue     #81a1c1
 
+# Dracula theme
+set $drac_background     #282a36
+set $drac_currentline    #44475a
+set $drac_selection      #44475a
+set $drac_foreground     #f8f8f2
+set $drac_comment        #6272a4
+set $drac_cyan           #8be9fd
+set $drac_green          #50fa7b
+set $drac_orange         #ffb86c
+set $drac_pink           #ff79c6
+set $drac_purple         #bd93f9
+set $drac_red            #ff5555
+set $drac_yellow         #f1fa8c
+
 # Window colors
 #                         ?             border          text?       split indic
 
@@ -231,10 +242,16 @@ set $fgblue     #81a1c1
 # client.urgent           $yellow         $yellow         $white      $yellow
 
 # Nord
-client.focused          $dimblue        $dimblue        $white       $dimblue
-client.unfocused        $bgblue         $bgblue         $white       $bgblue
-client.focused_inactive $dimblue        $dimblue        $white       $dimblue
-client.urgent           $fgblue         $fgblue         $white       $fgblue
+# client.focused          $dimblue        $dimblue        $white       $dimblue
+# client.unfocused        $bgblue         $bgblue         $white       $bgblue
+# client.focused_inactive $dimblue        $dimblue        $white       $dimblue
+# client.urgent           $fgblue         $fgblue         $white       $fgblue
+
+# Dracula
+client.focused          $drac_comment   $drac_comment   $drac_foreground       $drac_comment
+client.unfocused        $drac_selection $drac_selection $drac_foreground       $drac_selection
+client.focused_inactive $drac_selection $drac_selection $drac_foreground       $drac_selection
+client.urgent           $drac_purple    $drac_purple    $drac_foreground       $drac_purple
 
 # bar {
 #         strip_workspace_numbers yes
