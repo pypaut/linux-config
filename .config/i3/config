@@ -9,6 +9,7 @@ exec_always --no-startup-id $HOME/.config/i3/autostart.sh
 ###############
 
 set $mod Mod4
+set $alt Mod1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -153,11 +154,23 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+x exec $scripts/i3lock.sh
 bindsym $mod+control+shift+x exec $scripts/i3lock.sh && systemctl suspend
 
+# Pulse audio commands
+set $increase_vol_cmd "exec --no-startup-id pactl set-sink-volume 1 +5%"
+set $decrease_vol_cmd "exec --no-startup-id pactl set-sink-volume 1 -5%"
+set $mute_vol_cmd "exec --no-startup-id pactl set-sink-mute 1 toggle"
+set $mute_mic_cmd "exec --no-startup-id pactl set-source-mute 2 toggle"
+
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 2 toggle # mute mic
+bindsym XF86AudioRaiseVolume $increase_vol_cmd
+bindsym XF86AudioLowerVolume $decrease_vol_cmd
+bindsym XF86AudioMute $mute_vol_cmd
+bindsym XF86AudioMicMute $mute_mic_cmd
+
+# Pulse Audio controls bis
+bindsym $alt+v $increase_vol_cmd
+bindsym $alt+c $decrease_vol_cmd
+bindsym $alt+x $mute_vol_cmd
+bindsym $alt+z $mute_mic_cmd
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
