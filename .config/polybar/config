@@ -26,7 +26,7 @@ foreground = #f8f8f2
 foreground-alt = #6272a4
 primary = #5E81AC
 secondary = #e60053
-alert = #bd93d9
+alert = #ff5555
 good_green = #50fa7b
 meh_orange = #ffb86c
 bad_red = #ff5555
@@ -115,7 +115,7 @@ label-urgent-font = 4
 type = internal/memory
 interval = 2
 
-format-prefix = " RAM "
+format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-font = 3
 label = %percentage_used%%
@@ -224,7 +224,7 @@ format-connected = <label-connected>
 format-connected-prefix = "WRL "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-prefix-font = 3
-label-connected = %{T1}%downspeed%%{T-} (%essid%)
+label-connected = %{T1}%downspeed%%{T-}
 
 format-disconnected-prefix = "WRL "
 format-disconnected-prefix-foreground = ${colors.foreground-alt}
