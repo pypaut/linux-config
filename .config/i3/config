@@ -159,6 +159,8 @@ set $increase_vol_cmd "exec --no-startup-id pactl set-sink-volume 1 +5%"
 set $decrease_vol_cmd "exec --no-startup-id pactl set-sink-volume 1 -5%"
 set $mute_vol_cmd "exec --no-startup-id pactl set-sink-mute 1 toggle"
 set $mute_mic_cmd "exec --no-startup-id pactl set-source-mute 2 toggle"
+set $increase_mic_cmd "exec --no-startup-id pactl set-source-volume 2 +5%"
+set $decrease_mic_cmd "exec --no-startup-id pactl set-source-volume 2 -5%"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume $increase_vol_cmd
@@ -167,10 +169,13 @@ bindsym XF86AudioMute $mute_vol_cmd
 bindsym XF86AudioMicMute $mute_mic_cmd
 
 # Pulse Audio controls bis
-bindsym $alt+v $increase_vol_cmd
-bindsym $alt+c $decrease_vol_cmd
-bindsym $alt+x $mute_vol_cmd
-bindsym $alt+z $mute_mic_cmd
+bindsym $alt+c $increase_vol_cmd
+bindsym $alt+x $decrease_vol_cmd
+bindsym $alt+z $mute_vol_cmd
+
+bindsym $alt+a $mute_mic_cmd
+bindsym $alt+s $decrease_mic_cmd
+bindsym $alt+d $increase_mic_cmd
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
