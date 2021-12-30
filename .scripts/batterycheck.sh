@@ -20,5 +20,8 @@ while true; do
     if [ $state_str = "discharging" -a $bat_lvl_int -le 20 ]; then
         notify-send "Power outage!" "You might want to plug sometimes."
         paplay $HOME/.scripts/bark.ogg
+    elif [ $state_str = "charging" -a $bat_lvl_int -ge 80 ]; then
+        notify-send "OVERDRIVE!" "You can safely unplug now.\nWouldn't want any thunderclap now, would you?"
+        paplay $HOME/.scripts/bark.ogg
     fi
 done
