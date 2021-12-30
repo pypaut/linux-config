@@ -53,7 +53,7 @@ font-4 = "FontAwesome:size=11;3"
 bottom = true
 modules-left = i3
 modules-center = time sep date
-modules-right = pulseaudio sep memory sep cpu sep temperature sep wrl sep wrd sep battery sep2
+modules-right = pulseaudio sep mic sep memory sep cpu sep temperature sep wrl sep wrd sep battery sep2
 
 tray-position = right
 tray-padding = 0
@@ -212,6 +212,19 @@ format-muted-prefix = "VOL "
 format-muted-prefix-foreground = ${colors.foreground-alt}
 format-muted-prefix-font = 3
 label-muted = MUT
+
+
+; === MICROPHONE === ;
+[module/mic]
+type = custom/script
+exec = /home/geoffrey/.scripts/pulseaudio-microphone.sh
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-font = 3
+format-prefix = "MIC "
+tail = true
+click-left = /home/geoffrey/.scripts/pulseaudio-microphone.sh --toggle &
+scroll-up = /home/geoffrey/.scripts/pulseaudio-microphone.sh --increase &
+scroll-down = /home/geoffrey/.scripts/pulseaudio-microphone.sh --decrease &
 
 
 ; === WRL === ;
