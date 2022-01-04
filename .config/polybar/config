@@ -53,7 +53,7 @@ font-4 = "FontAwesome:size=11;3"
 bottom = true
 modules-left = i3
 modules-center = time sep date
-modules-right = pulseaudio sep mic sep memory sep cpu sep temperature sep wrl sep wrd sep battery sep2
+modules-right = pulseaudio sep mic sep memory sep cpu sep temperature sep wrl sep wrd sep layout sep battery sep
 
 tray-position = right
 tray-padding = 0
@@ -174,13 +174,6 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 
-; === LAYOUT === ;
-[module/layout]
-type = custom/script
-exec = /home/$USER/.scripts/layout.sh
-label = %output%
-
-
 ; === WIRED === ;
 [module/wrd]
 type = internal/network
@@ -225,6 +218,17 @@ tail = true
 click-left = /home/geoffrey/.scripts/pulseaudio-microphone.sh --toggle &
 scroll-up = /home/geoffrey/.scripts/pulseaudio-microphone.sh --increase &
 scroll-down = /home/geoffrey/.scripts/pulseaudio-microphone.sh --decrease &
+
+
+; === LAYOUT === ;
+[module/layout]
+type = custom/script
+exec = /home/geoffrey/.scripts/layout.sh
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-font = 3
+format-prefix = "KB "
+tail = true
+click-left = /home/geoffrey/.scripts/layout.sh change &
 
 
 ; === WRL === ;
