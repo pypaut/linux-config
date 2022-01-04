@@ -1,23 +1,40 @@
 #!/bin/bash
 
 
-if [ ! -f "/tmp/layout.dat" ]; then  # No file yet, start at 0
-    layout="us intl alt"
-else
-    layout=`cat /tmp/layout.dat`
+get_layout() {
+    layout=`setxkbmap -query | grep variant`
+    layout="${layout##* }"
+}
+
+
+change_layout() {
+    get_layout
+
+    if [ "$layout" = "" ]; then
+        new_layout="us intl alt"
+    elif [ "$layout" = "intl" ]; then
+        new_layout="us"
+    fi
+
+    setxkbmap $new_layout
+}
+
+
+display_layout() {
+    get_layout
+
+    if [ "$layout" = "" ]; then
+        display_layout="US"
+    elif [ "$layout" = "intl" ]; then
+        display_layout="INTL"
+    fi
+
+    echo $display_layout
+}
+
+
+if [ "$1" = "change" ]; then
+    change_layout
 fi
 
-if [ "$layout" = "us intl alt" ]; then
-    layout="us"
-elif [ "$layout" = "us" ]; then
-    layout="fr"
-elif [ "$layout" = "fr" ]; then
-    layout="us intl alt"
-else
-    layout="us intl alt"
-fi
-
-setxkbmap $layout
-echo "Layout $layout"
-echo "$layout" > /tmp/layout.dat
-
+display_layout

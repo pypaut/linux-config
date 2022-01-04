@@ -150,6 +150,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Input layout toggle
+bindsym control+$alt+space exec $scripts/layout.sh change
+
 # Lock
 bindsym $mod+shift+x exec $scripts/i3lock.sh
 bindsym $mod+control+shift+x exec $scripts/i3lock.sh && systemctl suspend
