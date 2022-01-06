@@ -172,13 +172,13 @@ bindsym XF86AudioMute $mute_vol_cmd
 bindsym XF86AudioMicMute $mute_mic_cmd
 
 # Pulse Audio controls bis
-bindsym $alt+c $increase_vol_cmd
-bindsym $alt+x $decrease_vol_cmd
-bindsym $alt+z $mute_vol_cmd
+bindsym $alt+q $mute_vol_cmd
+bindsym $alt+w $decrease_vol_cmd
+bindsym $alt+e $increase_vol_cmd
 
-bindsym $alt+a $mute_mic_cmd
-bindsym $alt+s $decrease_mic_cmd
-bindsym $alt+d $increase_mic_cmd
+bindsym $alt+z $mute_mic_cmd
+bindsym $alt+x $decrease_mic_cmd
+bindsym $alt+c $increase_mic_cmd
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -200,7 +200,7 @@ bindsym $mod+Shift+p exec $scripts/monitor.sh
 bindsym --release $mod+Shift+s exec $scripts/scrot.sh
 
 # Applications
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 bindsym $mod+w exec firefox
 bindsym $mod+e exec thunar
 
@@ -213,7 +213,7 @@ bindsym $mod+e exec thunar
 font pango:Iosevka Nerd Font Mono 9
 
 # Wallpaper
-exec_always feh --bg-fill /home/geoffrey/Pictures/nord-wallpapers/image-go-nord/ign-0004.png
+exec_always feh --bg-fill /home/geoffrey/Pictures/saber.png
 # exec --no-startup-id nitrogen --restore
 
 # Color variables
