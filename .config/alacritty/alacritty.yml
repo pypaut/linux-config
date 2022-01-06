@@ -97,7 +97,7 @@ background_opacity: 0.9
 
 colors:
   primary:
-    background: '#282a36'
+    background: '#2e3440'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
   cursor:
