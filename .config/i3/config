@@ -1,5 +1,5 @@
 # Set configuration & scripts location
-set $scripts $HOME/.scripts
+set $scripts $HOME/.config/linux-config/.scripts
 
 # Startup
 exec_always --no-startup-id $HOME/.config/i3/autostart.sh
@@ -66,26 +66,26 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # Workspaces
-set $workspace1 "1:︁"
-set $workspace2 "2:"
-set $workspace3 "3:"
-set $workspace4 "4:"
-set $workspace5 "5:"
-set $workspace6 "6:"
-set $workspace7 "7:"
-set $workspace8 "8:"
-set $workspace9 "9:"
-set $workspace10 "10:"
-# set $workspace1 "1"
-# set $workspace2 "2"
-# set $workspace3 "3"
-# set $workspace4 "4"
-# set $workspace5 "5"
-# set $workspace6 "6"
-# set $workspace7 "7"
-# set $workspace8 "8"
-# set $workspace9 "9"
-# set $workspace10 "10"
+# set $workspace1 "1:︁"
+# set $workspace2 "2:"
+# set $workspace3 "3:"
+# set $workspace4 "4:"
+# set $workspace5 "5:"
+# set $workspace6 "6:"
+# set $workspace7 "7:"
+# set $workspace8 "8:"
+# set $workspace9 "9:"
+# set $workspace10 "10:"
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -110,6 +110,18 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# Kill windows inside workspace
+bindsym $mod+Ctrl+1 [workspace=$workspace1] kill
+bindsym $mod+Ctrl+2 [workspace=$workspace2] kill
+bindsym $mod+Ctrl+3 [workspace=$workspace3] kill
+bindsym $mod+Ctrl+4 [workspace=$workspace4] kill
+bindsym $mod+Ctrl+5 [workspace=$workspace5] kill
+bindsym $mod+Ctrl+6 [workspace=$workspace6] kill
+bindsym $mod+Ctrl+7 [workspace=$workspace7] kill
+bindsym $mod+Ctrl+8 [workspace=$workspace8] kill
+bindsym $mod+Ctrl+9 [workspace=$workspace9] kill
+bindsym $mod+Ctrl+0 [workspace=$workspace10] kill
 
 # Assign applications to workspace
 # assign [class="(?i)zathura"] $workspace2
@@ -213,7 +225,7 @@ bindsym $mod+e exec thunar
 font pango:Iosevka Nerd Font Mono 9
 
 # Wallpaper
-exec_always feh --bg-fill /home/geoffrey/Pictures/saber.png
+exec_always feh --bg-fill /home/pypaut/Pictures/Wallpapers/saber.png
 # exec --no-startup-id nitrogen --restore
 
 # Color variables
@@ -276,31 +288,40 @@ client.unfocused        $drac_selection $drac_selection $drac_foreground       $
 client.focused_inactive $drac_selection $drac_selection $drac_foreground       $drac_selection
 client.urgent           $drac_purple    $drac_purple    $drac_foreground       $drac_purple
 
-# bar {
-#         strip_workspace_numbers yes
-#         status_command i3status
-# 
-#     colors {
-#         # Blacked out
-#         # background $black
-#         # separator  $darkgray
-#         # #                   border      background      text
-#         # focused_workspace   $black      $black          $white
-#         # inactive_workspace  $black      $black          $grey
-#         # urgent_workspace    $black      $black          $yellow
-# 
-# 
-# 
-#         # Nord
-#         background $bgblue
-#         separator  $dimblue
-#         #                   border      background      text
-#         focused_workspace   $dimblue    $dimblue        $white
-#         inactive_workspace  $bgblue     $bgblue         $white
-#         urgent_workspace    $fgblue     $bgblue         $white
-#     }
-# 
-# }
+bar {
+        strip_workspace_numbers no
+        status_command i3status
+        position top
+
+    colors {
+        # Blacked out
+        # background $black
+        # separator  $darkgray
+        # #                   border      background      text
+        # focused_workspace   $black      $black          $white
+        # inactive_workspace  $black      $black          $grey
+        # urgent_workspace    $black      $black          $yellow
+
+
+
+        # Nord
+        # background $bgblue
+        # separator  $dimblue
+        # #                   border      background      text
+        # focused_workspace   $dimblue    $dimblue        $white
+        # inactive_workspace  $bgblue     $bgblue         $white
+        # urgent_workspace    $fgblue     $bgblue         $white
+
+        # Dracula
+        background $drac_background
+        separator  $drac_comment
+        #                   border              background          text
+        focused_workspace   $drac_comment       $drac_comment       $white
+        inactive_workspace  $drac_background    $drac_background    $drac_foreground
+        urgent_workspace    $drac_purple        $drac_purple        $drac_foreground
+    }
+
+}
 
 
 # Border
