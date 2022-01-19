@@ -167,30 +167,22 @@ bindsym control+$alt+space exec $scripts/layout.sh change
 
 # Lock
 bindsym $mod+shift+x exec $scripts/i3lock.sh
-bindsym $mod+control+shift+x exec $scripts/i3lock.sh && systemctl suspend
-
-# Pulse audio commands
-set $increase_vol_cmd "exec --no-startup-id pactl set-sink-volume 1 +5%"
-set $decrease_vol_cmd "exec --no-startup-id pactl set-sink-volume 1 -5%"
-set $mute_vol_cmd "exec --no-startup-id pactl set-sink-mute 1 toggle"
-set $mute_mic_cmd "exec --no-startup-id pactl set-source-mute 2 toggle"
-set $increase_mic_cmd "exec --no-startup-id pactl set-source-volume 2 +5%"
-set $decrease_mic_cmd "exec --no-startup-id pactl set-source-volume 2 -5%"
-
+bindsym $mod+control+shift+x exec $scripts/suspend.sh
+#
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume $increase_vol_cmd
-bindsym XF86AudioLowerVolume $decrease_vol_cmd
-bindsym XF86AudioMute $mute_vol_cmd
-bindsym XF86AudioMicMute $mute_mic_cmd
+bindsym XF86AudioRaiseVolume $scripts/sound.sh inc
+bindsym XF86AudioLowerVolume $scripts/sound.sh dec
+bindsym XF86AudioMute $scripts/sound.sh mut
+bindsym XF86AudioMicMute $scripts/mic.sh mut
 
 # Pulse Audio controls bis
-bindsym $alt+q $mute_vol_cmd
-bindsym $alt+w $decrease_vol_cmd
-bindsym $alt+e $increase_vol_cmd
+bindsym $alt+q exec $scripts/sound.sh mut
+bindsym $alt+w exec $scripts/sound.sh dec
+bindsym $alt+e exec $scripts/sound.sh inc
 
-bindsym $alt+z $mute_mic_cmd
-bindsym $alt+x $decrease_mic_cmd
-bindsym $alt+c $increase_mic_cmd
+bindsym $alt+z exec $scripts/mic.sh mut
+bindsym $alt+x exec $scripts/mic.sh dec
+bindsym $alt+c exec $scripts/mic.sh inc
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
