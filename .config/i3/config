@@ -316,9 +316,9 @@ bar {
         background $drac_background
         separator  $drac_comment
         #                   border              background          text
-        focused_workspace   $drac_comment       $drac_comment       $white
-        inactive_workspace  $drac_background    $drac_background    $drac_foreground
-        urgent_workspace    $drac_purple        $drac_purple        $drac_foreground
+        focused_workspace   $drac_background    $drac_background    $white
+        inactive_workspace  $drac_background    $drac_background    $drac_comment
+        urgent_workspace    $drac_purple        $drac_purple        $drac_comment
     }
 
 }
