@@ -310,7 +310,7 @@ bar {
         #                   border              background          text
         focused_workspace   $drac_background    $drac_background    $white
         inactive_workspace  $drac_background    $drac_background    $drac_comment
-        urgent_workspace    $drac_purple        $drac_purple        $drac_comment
+        urgent_workspace    $drac_background    $drac_background    $drac_purple
     }
 
 }
