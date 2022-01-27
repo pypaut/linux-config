@@ -1,5 +1,5 @@
 # Set configuration & scripts location
-set $scripts $HOME/.config/linux-config/.scripts
+set $scripts $HOME/.scripts
 
 # Startup
 exec_always --no-startup-id $HOME/.config/i3/autostart.sh
