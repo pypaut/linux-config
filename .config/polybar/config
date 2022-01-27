@@ -36,6 +36,28 @@ bad_red = #ff5555
 ; === GENERAL === ;
 ; =============== ;
 
+[bar/secondary]
+height = 20
+padding-left = 1
+padding-right = 1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = "Iosevka Nerd Font Mono:style=Medium:size=9;3"
+font-1 = "Iosevka Nerd Font Mono:style=Bold:size=9;3"
+font-2 = "Iosevka Nerd Font Mono:style=Bold Oblique:size=9;3"
+font-3 = "Iosevka Nerd Font:size=12;3"
+font-4 = "FontAwesome:size=11;3"
+
+bottom = true
+modules-left = layout
+modules-center = time sep date
+modules-right = mic sep memory sep cpu sep temperature sep wrl sep wrd
+
+tray-position = right
+tray-padding = 0
+
 [bar/mybar]
 height = 20
 padding-left = 0
@@ -210,25 +232,25 @@ label-muted = MUT
 ; === MICROPHONE === ;
 [module/mic]
 type = custom/script
-exec = /home/geoffrey/.scripts/pulseaudio-microphone.sh
+exec = /home/pypaut/.scripts/pulseaudio-microphone.sh
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-font = 3
 format-prefix = "MIC "
 tail = true
-click-left = /home/geoffrey/.scripts/pulseaudio-microphone.sh --toggle &
-scroll-up = /home/geoffrey/.scripts/pulseaudio-microphone.sh --increase &
-scroll-down = /home/geoffrey/.scripts/pulseaudio-microphone.sh --decrease &
+click-left = /home/pypaut/.scripts/pulseaudio-microphone.sh --toggle &
+scroll-up = /home/pypaut/.scripts/pulseaudio-microphone.sh --increase &
+scroll-down = /home/pypaut/.scripts/pulseaudio-microphone.sh --decrease &
 
 
 ; === LAYOUT === ;
 [module/layout]
 type = custom/script
-exec = /home/geoffrey/.scripts/layout.sh
+exec = /home/pypaut/.scripts/layout.sh
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-font = 3
 format-prefix = "KB "
 tail = true
-click-left = /home/geoffrey/.scripts/layout.sh change &
+click-left = /home/pypaut/.scripts/layout.sh change &
 
 
 ; === WRL === ;
