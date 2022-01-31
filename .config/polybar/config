@@ -51,7 +51,7 @@ font-3 = "Iosevka Nerd Font:size=12;3"
 font-4 = "FontAwesome:size=11;3"
 
 bottom = true
-modules-left = pulseaudio sep mic sep layout sep monitor
+modules-left = pulseaudio sep mic sep layout sep monitor sep notif
 modules-center = time sep date
 modules-right = mic sep memory sep cpu sep temperature sep wrl sep wrd
 
@@ -250,6 +250,17 @@ tail = true
 click-left = /home/pypaut/.scripts/pulseaudio-microphone.sh --toggle &
 scroll-up = /home/pypaut/.scripts/pulseaudio-microphone.sh --increase &
 scroll-down = /home/pypaut/.scripts/pulseaudio-microphone.sh --decrease &
+
+
+; === NOTIFICATIONS === ;
+[module/notif]
+type = custom/script
+exec = /home/geoffrey/.scripts/notif.sh
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-font = 3
+format-prefix = "NOTIF "
+tail = true
+click-left = /home/geoffrey/.scripts/notif.sh change
 
 
 ; === LAYOUT === ;
