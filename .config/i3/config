@@ -133,6 +133,23 @@ assign [class="(?i)teams"] $workspace9
 assign [class="(?i)discord"] $workspace9
 assign [class="(?i)pavucontrol"] $workspace10
 
+# Monitors
+# You can assign workspaces to monitors here
+
+set $screen1 "HDMI-2"
+set $screen2 "eDP-1"
+
+# workspace $workspace0 output $screen1
+# workspace $workspace2 output $screen1
+# workspace $workspace3 output $screen1
+# workspace $workspace4 output $screen1
+# workspace $workspace5 output $screen1
+# workspace $workspace6 output $screen1
+# workspace $workspace7 output $screen1
+# workspace $workspace8 output $screen1
+# workspace $workspace9 output $screen1
+# workspace $workspace10 output $screen1
+
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
