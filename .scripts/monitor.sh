@@ -20,21 +20,21 @@ fi
 
 if [ "$1" = "change" ]; then
     if [ $monitor_mode = "MIX" ]; then
+            xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --mode $EXTERNAL_RES && \
             monitor_mode="EXT"
-            xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --mode $EXTERNAL_RES
     elif [ $monitor_mode = "EXT" ]; then
+            xrandr --output $INTERNAL_OUTPUT --mode $INTERNAL_RES --output $EXTERNAL_OUTPUT --off && \
             monitor_mode="INT"
-            xrandr --output $INTERNAL_OUTPUT --mode $INTERNAL_RES --output $EXTERNAL_OUTPUT --off
     elif [ $monitor_mode = "INT" ]; then
+            xrandr --output $INTERNAL_OUTPUT --mode $INTERNAL_RES \
+                --output $EXTERNAL_OUTPUT --mode $EXTERNAL_RES \
+                --same-as $INTERNAL_OUTPUT && \
             monitor_mode="CP"
-            xrandr --output $INTERNAL_OUTPUT --mode $INTERNAL_RES \
-                --output $EXTERNAL_OUTPUT --mode $EXTERNAL_RES \
-                --same-as $INTERNAL_OUTPUT
     else
-            monitor_mode="MIX"
             xrandr --output $INTERNAL_OUTPUT --mode $INTERNAL_RES \
                 --output $EXTERNAL_OUTPUT --mode $EXTERNAL_RES \
-                --$EXTERNAL_POS $INTERNAL_OUTPUT
+                --$EXTERNAL_POS $INTERNAL_OUTPUT && \
+            monitor_mode="MIX"
     fi
     echo "${monitor_mode}" > /tmp/monitor_mode.dat
 fi
