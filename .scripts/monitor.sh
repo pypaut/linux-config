@@ -5,7 +5,7 @@ INTERNAL_OUTPUT="eDP-1"
 
 # if we don't have a file, start at zero
 if [ ! -f "/tmp/monitor_mode.dat" ] ; then
-  monitor_mode="MIXED"
+  monitor_mode="MIX"
 
 # otherwise read the value from the file
 else
@@ -13,17 +13,17 @@ else
 fi
 
 if [ "$1" = "change" ]; then
-    if [ $monitor_mode = "MIXED" ]; then
-            monitor_mode="EXTERNAL"
+    if [ $monitor_mode = "MIX" ]; then
+            monitor_mode="EXT"
             xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
-    elif [ $monitor_mode = "EXTERNAL" ]; then
-            monitor_mode="INTERNAL"
+    elif [ $monitor_mode = "EXT" ]; then
+            monitor_mode="INT"
             xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off
-    elif [ $monitor_mode = "INTERNAL" ]; then
-            monitor_mode="CLONES"
+    elif [ $monitor_mode = "INT" ]; then
+            monitor_mode="CP"
             xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT
     else
-            monitor_mode="MIXED"
+            monitor_mode="MIX"
             xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT
     fi
     echo "${monitor_mode}" > /tmp/monitor_mode.dat
