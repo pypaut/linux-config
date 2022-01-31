@@ -51,7 +51,7 @@ font-3 = "Iosevka Nerd Font:size=12;3"
 font-4 = "FontAwesome:size=11;3"
 
 bottom = true
-modules-left = layout
+modules-left = pulseaudio sep mic sep layout sep monitor
 modules-center = time sep date
 modules-right = mic sep memory sep cpu sep temperature sep wrl sep wrd
 
@@ -227,6 +227,16 @@ format-muted-prefix = "VOL "
 format-muted-prefix-foreground = ${colors.foreground-alt}
 format-muted-prefix-font = 3
 label-muted = MUT
+
+
+; === MONITOR === ;
+[module/monitor]
+type = custom/script
+exec = /home/geoffrey/.scripts/monitor.sh
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-font = 3
+format-prefix = "MON "
+tail = true
 
 
 ; === MICROPHONE === ;
