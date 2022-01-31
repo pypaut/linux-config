@@ -198,7 +198,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Change display
-bindsym $mod+Shift+p exec $scripts/monitor.sh
+bindsym $mod+Shift+p exec $scripts/monitor.sh change
 
 # Screenshot
 bindsym --release $mod+Shift+s exec $scripts/scrot.sh
