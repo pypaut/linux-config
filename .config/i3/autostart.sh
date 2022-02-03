@@ -1,5 +1,6 @@
 #!/bin/sh
 
+setxkbmap us qwerty-fr
 $HOME/.scripts/dropbox.sh
 $HOME/.scripts/nm-applet.sh
 $HOME/.scripts/polybar.sh
