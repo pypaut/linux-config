@@ -14,6 +14,9 @@ call plug#end()
 " --- Lightline
 let g:lightline = {
       \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
       \ }
 set noshowmode
 
