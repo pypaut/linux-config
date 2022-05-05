@@ -120,3 +120,5 @@ au BufNewFile,BufRead *.ms inoremap Ù \[`U]
 au BufNewFile,BufRead *.ms inoremap Ê \[^E]
 au BufNewFile,BufRead *.ms inoremap Ô \[^O]
 
+" --- YAML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
