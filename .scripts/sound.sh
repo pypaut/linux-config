@@ -15,6 +15,11 @@ increase_vol() {
     pactl set-sink-volume ${sink} +5%
 }
 
+notify_vol() {
+    vol=$(pactl get-sink-volume ${sink} | awk '{print $5}')
+    notify-send "VOLUME: $vol"
+}
+
 case "$1" in
     "mut") mute_vol ;;
     "dec") decrease_vol ;;
@@ -22,3 +27,5 @@ case "$1" in
     "") ;;
     *) echo "$1 : unrecognized command" ;;
 esac
+
+notify_vol
