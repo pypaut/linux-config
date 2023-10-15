@@ -1,16 +1,5 @@
-# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
-# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
-
-# Project:    Nord Alacritty
-# Version:    0.1.0
-# Repository: https://github.com/arcticicestudio/nord-alacritty
-# License:    MIT
-# References:
-#   https://github.com/alacritty/alacritty
-#
-
 import:
-  - ~/.config/alacritty/themes/alabaster.yaml
+  - ~/.config/alacritty/themes/catppuccin-latte.yml
 
 
 mouse:
@@ -21,11 +10,11 @@ window:
   padding:
     x: 20
     y: 20
-  opacity: 0.90
+  opacity: 1.0
 
 
 font:
-  size: 12
+  size: 10
 
   normal:
     family: Iosevka
@@ -42,3 +31,6 @@ font:
   bold_italic:
     family: Iosevka
     style: Bold Italic
+
+env:
+  TERM: xterm-256color
