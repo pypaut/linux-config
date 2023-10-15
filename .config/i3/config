@@ -125,40 +125,36 @@ bindsym $mod+Ctrl+0 [workspace=$workspace10] kill
 
 # Assign applications to workspace
 # assign [class="(?i)zathura"] $workspace2
-assign [class="(?i)mail"] $workspace5
-assign [class="(?i)steam"] $workspace6
-assign [class="(?i)lutris"] $workspace6
-assign [class="(?i)vlc"] $workspace8
-assign [class="(?i)teams"] $workspace9
-assign [class="(?i)discord"] $workspace9
-assign [class="(?i)pavucontrol"] $workspace10
+# assign [class="(?i)mail"] $workspace5
+# assign [class="(?i)steam"] $workspace6
+# assign [class="(?i)lutris"] $workspace6
+# assign [class="(?i)vlc"] $workspace8
+# assign [class="(?i)teams"] $workspace9
+# assign [class="(?i)discord"] $workspace9
+# assign [class="(?i)pavucontrol"] $workspace10
 
 # Monitors
 # You can assign workspaces to monitors here
 
-set $screen1 "HDMI-2"
-set $screen2 "eDP-1"
+set $screen1 "eDP-1"
+set $screen2 "HDMI-2"
 
-# workspace $workspace0 output $screen1
-# workspace $workspace2 output $screen1
-# workspace $workspace3 output $screen1
-# workspace $workspace4 output $screen1
-# workspace $workspace5 output $screen1
-# workspace $workspace6 output $screen1
-# workspace $workspace7 output $screen1
-# workspace $workspace8 output $screen1
-# workspace $workspace9 output $screen1
-# workspace $workspace10 output $screen1
+workspace $workspace1 output $screen1
+workspace $workspace2 output $screen2
+workspace $workspace3 output $screen2
+workspace $workspace4 output $screen2
+workspace $workspace5 output $screen1
+workspace $workspace6 output $screen1
+workspace $workspace7 output $screen1
+workspace $workspace8 output $screen1
+workspace $workspace9 output $screen1
+workspace $workspace10 output $screen1
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-
-# Power management
-bindsym $mod+Shift+e exec rofi_run -l
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
@@ -187,10 +183,10 @@ bindsym $mod+shift+x exec $scripts/i3lock.sh
 bindsym $mod+control+shift+x exec $scripts/suspend.sh
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume $scripts/sound.sh inc
-bindsym XF86AudioLowerVolume $scripts/sound.sh dec
-bindsym XF86AudioMute $scripts/sound.sh mut
-bindsym XF86AudioMicMute $scripts/mic.sh mut
+bindsym XF86AudioRaiseVolume exec $scripts/sound.sh inc
+bindsym XF86AudioLowerVolume exec $scripts/sound.sh dec
+bindsym XF86AudioMute exec $scripts/sound.sh mut
+bindsym XF86AudioMicMute exec $scripts/mic.sh mut
 
 # Pulse Audio controls bis
 bindsym $alt+q exec $scripts/sound.sh mut
@@ -224,6 +220,7 @@ bindsym --release $mod+Shift+s exec $scripts/scrot.sh
 bindsym $mod+Return exec alacritty
 bindsym $mod+w exec firefox
 bindsym $mod+e exec thunar
+bindsym $mod+Shift+e exec thunar Pictures/Screenshots
 
 
 ##########
@@ -231,10 +228,11 @@ bindsym $mod+e exec thunar
 ##########
 
 # Title & bar font
-font pango:Iosevka Nerd Font Mono 9
+font pango:Iosevka 9
 
 # Wallpaper
-exec_always feh --bg-fill /home/pypaut/Pictures/Wallpapers/saber.png
+exec_always --no-startup-id $scripts/wallpaper.sh
+bindsym $mod+Shift+w exec $scripts/wallpaper.sh
 # exec --no-startup-id nitrogen --restore
 
 # Color variables
@@ -270,6 +268,13 @@ set $drac_purple         #bd93f9
 set $drac_red            #ff5555
 set $drac_yellow         #f1fa8c
 
+# Win95 theme
+set $win_blue     #050582
+set $win_white    #ffffff
+set $win_black    #000000
+set $win_gray     #c1c1c1
+set $win_darkgray #808080
+
 # Window colors
 #                         ?             border          text?       split indic
 
@@ -292,10 +297,16 @@ set $drac_yellow         #f1fa8c
 # client.urgent           $fgblue         $fgblue         $white       $fgblue
 
 # Dracula
-client.focused          $drac_comment   $drac_comment   $drac_foreground       $drac_comment
-client.unfocused        $drac_selection $drac_selection $drac_foreground       $drac_selection
-client.focused_inactive $drac_selection $drac_selection $drac_foreground       $drac_selection
-client.urgent           $drac_purple    $drac_purple    $drac_foreground       $drac_purple
+# client.focused          $drac_comment   $drac_comment   $drac_foreground       $drac_comment
+# client.unfocused        $drac_selection $drac_selection $drac_foreground       $drac_selection
+# client.focused_inactive $drac_selection $drac_selection $drac_foreground       $drac_selection
+# client.urgent           $drac_purple    $drac_purple    $drac_foreground       $drac_purple
+
+# Win95
+client.focused          $win_blue       $win_blue       $white       $win_blue
+client.unfocused        $win_darkgray   $win_darkgray   $win_gray    $win_darkgray
+client.focused_inactive $win_blue       $win_blue       $white       $win_blue
+client.urgent           $win_darkgray   $win_darkgray   $win_blue    $win_darkgray
 
 bar {
         strip_workspace_numbers no
@@ -311,8 +322,6 @@ bar {
         # inactive_workspace  $black      $black          $grey
         # urgent_workspace    $black      $black          $yellow
 
-
-
         # Nord
         # background $bgblue
         # separator  $dimblue
@@ -322,12 +331,20 @@ bar {
         # urgent_workspace    $fgblue     $bgblue         $white
 
         # Dracula
-        background $drac_background
-        separator  $drac_comment
+        # background $drac_background
+        # separator  $drac_comment
         #                   border              background          text
-        focused_workspace   $drac_background    $drac_background    $white
-        inactive_workspace  $drac_background    $drac_background    $drac_comment
-        urgent_workspace    $drac_background    $drac_background    $drac_purple
+        # focused_workspace   $drac_background    $drac_background    $white
+        # inactive_workspace  $drac_background    $drac_background    $drac_comment
+        # urgent_workspace    $drac_background    $drac_background    $drac_purple
+
+        # Win95
+        background $win_darkgray
+        separator  $win_gray
+        #                   border              background          text
+        focused_workspace   $win_gray           $win_gray           $win_blue
+        inactive_workspace  $win_darkgray       $win_darkgray       $win_black
+        urgent_workspace    $win_darkgray       $win_darkgray       $win_blue
     }
 
 }
@@ -338,7 +355,7 @@ for_window [class="^.*"] border pixel 3
 
 # Default state
 # for_window [class="st"] floating enable
-# for_window [class="(?i)thunar"] floating enable
+for_window [class="(?i)thunar"] floating enable
 # for_window [class="(?i)lutris"] floating enable
 
 # Set inner/outer gaps
