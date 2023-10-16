@@ -303,11 +303,11 @@ set $win_darkgray #808080
 # client.urgent           $drac_purple    $drac_purple    $drac_foreground       $drac_purple
 
 # Win95
-client.focused          $win_black      $win_gray       $win_black   $win_gray
-client.unfocused        $win_darkgray   $win_darkgray   $win_black   $win_darkgray
-client.focused_inactive $win_black      $win_gray       $win_black   $win_gray
-client.urgent           $win_black      $win_blue       $win_white   $win_blue
-#                         ?             border          text?       split indic
+client.focused          $win_gray           $win_gray       $win_black      $win_gray
+client.unfocused        $win_darkgray       $win_darkgray   $win_black      $win_darkgray
+client.focused_inactive $win_gray           $win_gray       $win_black      $win_gray
+client.urgent           $win_blue           $win_blue       $win_white      $win_blue
+#                       border of title     border          text?           split indic
 
 bar {
         strip_workspace_numbers no
