@@ -1,79 +1,20 @@
 [global]
-    ### Display ###
-
     # Which monitor should the notifications be displayed on.
     monitor = 0
-
-    # Display notification on focused monitor.  Possible modes are:
-    #   mouse: follow mouse pointer
-    #   keyboard: follow window with keyboard focus
-    #   none: don't follow anything
-    #
-    # "keyboard" needs a window manager that exports the
-    # _NET_ACTIVE_WINDOW property.
-    # This should be the case for almost all modern window managers.
-    #
-    # If this option is set to mouse or keyboard, the monitor option
-    # will be ignored.
     follow = mouse
-
-    # The geometry of the window:
-    #   [{width}]x{height}[+/-{x}+/-{y}]
-    # The geometry of the message window.
-    # The height is measured in number of notifications everything else
-    # in pixels.  If the width is omitted but the height is given
-    # ("-geometry x2"), the message window expands over the whole screen
-    # (dmenu-like).  If width is 0, the window expands to the longest
-    # message displayed.  A positive x is measured from the left, a
-    # negative from the right side of the screen.  Y is measured from
-    # the top and down respectively.
-    # The width can be negative.  In this case the actual width is the
-    # screen width minus the width defined in within the geometry option.
-    # geometry = "300x5+840+25"  # 840 = 1980//2 - 300//2
-    # geometry = "300x5+1130+25"
-    # width = 300
-    # height = 200
-    # offset = 840x50  # For 1920
-    # offset = 1130x50  # For 2560
+    origin = bottom-center
+    width = 200
     notification_limit = 1
-
-    # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
-
-    # Shrink window if it's smaller than the width.  Will be ignored if
-    # width is 0.
-    shrink = no
-
-    # The transparency of the window.  Range: [0; 100].
-    # This option will only work if a compositing window manager is
-    # present (e.g. xcompmgr, compiz, etc.).
+    shrink = yes
     transparency = 0
-
-    # The height of the entire notification.  If the height is smaller
-    # than the font height and padding combined, it will be raised
-    # to the font height and padding.
-    # notification_height = 0
-
-    # Draw a line of "separator_height" pixel height between two
-    # notifications.
-    # Set to 0 to disable.
-    separator_height = 2
-
-    # Padding between text and separator.
+    notification_height = 0  # Raised to the font if 0
+    separator_height = 2  # Between notifications
     padding = 8
-
-    # Horizontal padding.
-    horizontal_padding = 0
-
-    # Defines width in pixels of frame around the notification window.
-    # Set to 0 to disable.
+    horizontal_padding = 8
     frame_width = 3
+    corner_radius = 0
 
-    # Defines color of the frame around the notification window.
-    # frame_color = "#aaaaaa"
-    # frame_color = "#81a1c1"
-    # frame_color = "#050582" # win95 blue
-    frame_color = "#808080"
 
     # Define a color for the separator.
     # possible values are:
@@ -96,7 +37,7 @@
     ### Text ###
 
     # font = Monospace 8
-    font = Iosevka 15
+    font = Iosevka 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -136,23 +77,11 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
+
     format = "<b>%s</b>\n%b"
-
-    # Alignment of message text.
-    # Possible values are "left", "center" and "right".
     alignment = center
-
-    # Vertical alignment of message text and icon.
-    # Possible values are "top", "center" and "bottom".
     vertical_alignment = center
-
-    # Show age of message if message is older than show_age_threshold
-    # seconds.
-    # Set to -1 to disable.
     show_age_threshold = 60
-
-    # Split notifications into multiple lines if they don't fit into
-    # geometry.
     word_wrap = yes
 
     # When word_wrap is set to no, specify where to make an ellipsis in long lines.
@@ -227,42 +156,10 @@
     # debug: all less than unimportant stuff
     # verbosity = mesg
 
-    # Define the corner radius of the notification window
-    # in pixel size. If the radius is 0, you have no rounded
-    # corners.
-    # The radius will be automatically lowered if it exceeds half of the
-    # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
 
-    # Ignore the dbus closeNotification message.
-    # Useful to enforce the timeout set by dunst configuration. Without this
-    # parameter, an application may close the notification sent before the 
-    # user defined timeout.
     ignore_dbusclose = false
 
-    ### Legacy
-
-    # Use the Xinerama extension instead of RandR for multi-monitor support.
-    # This setting is provided for compatibility with older nVidia drivers that
-    # do not support RandR and using it on systems that support RandR is highly
-    # discouraged.
-    #
-    # By enabling this setting dunst will not be able to detect when a monitor
-    # is connected or disconnected which might break follow mode if the screen
-    # layout changes.
-    force_xinerama = false
-
-    ### mouse
-
-    # Defines list of actions for each mouse event
-    # Possible values are:
-    # * none: Don't do anything.
-    # * do_action: If the notification has exactly one action, or one is marked as default,
-    #              invoke it. If there are multiple and no default, open the context menu.
-    # * close_current: Close current notification.
-    # * close_all: Close all notifications.
-    # These values can be strung together for each mouse event, and
-    # will be executed in sequence.
+    ### mouse: none, do_action, close_current, close_all
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
@@ -299,35 +196,55 @@
 #     # Context menu.
 #     context = ctrl+shift+period
 
+####################
+### COLORS: Nord ###
+####################
+
+frame_color = "#5e81ac"
+
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    # background = "#282a36"
-    # foreground = "#f8f8f2"
-    background = "#c1c1c1"
-    foreground = "#000000"
+    background = "#282a36"
+    foreground = "#f8f8f2"
     timeout = 5
-    # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    # background = "#282a36"
-    # foreground = "#f8f8f2"
-    background = "#c1c1c1"
-    foreground = "#000000"
+    background = "#282a36"
+    foreground = "#f8f8f2"
     timeout = 5
-    # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    # background = "#ff5555"
-    # foreground = "#ffffff"
-    background = "#c1c1c1"
-    foreground = "#000000"
-    # frame_color = "#ff0000"
+    background = "#ff5555"
+    foreground = "#ffffff"
     timeout = 0
-    # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
+
+#####################
+### COLORS: win95 ###
+#####################
+
+# frame_color = "#050582"
+
+# [urgency_low]
+#     background = "#c1c1c1"
+#     foreground = "#000000"
+#     timeout = 5
+#     #icon = /path/to/icon
+# 
+# [urgency_normal]
+#     background = "#c1c1c1"
+#     foreground = "#000000"
+#     timeout = 5
+#     #icon = /path/to/icon
+# 
+# [urgency_critical]
+#     background = "#c1c1c1"
+#     foreground = "#000000"
+#     # frame_color = "#ff0000"
+#     timeout = 0
+#     #icon = /path/to/icon
+
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
