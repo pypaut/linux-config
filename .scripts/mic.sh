@@ -1,7 +1,8 @@
 #!/bin/sh
 
 
-source="alsa_input.pci-0000_00_1f.3.analog-stereo"
+# source="alsa_input.pci-0000_00_1f.3.analog-stereo"
+source=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
 
 mute_vol() {
     pactl set-source-mute ${source} toggle
