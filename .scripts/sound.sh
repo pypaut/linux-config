@@ -31,13 +31,13 @@ notify_vol() {
     mute_status=$(pactl get-sink-mute ${sink} | awk '{ print $2 }')
     dunstify -C ${dunst_id}
 
-    # if [[ $mute_status = "yes" ]]; then
-    #     dunstify -r ${dunst_id} "Volume: $vol" "MUTED"
-    # else
-    #     dunstify -r ${dunst_id} "Volume: $vol" "SOUND"
-    # fi
+    if [[ $mute_status = "yes" ]]; then
+        dunstify -r ${dunst_id} "Volume" "<s>$vol</s>"
+    else
+        dunstify -r ${dunst_id} "Volume" "$vol"
+    fi
 
-    dunstify -r ${dunst_id} "Volume: $vol"
+    # dunstify -r ${dunst_id} "Volume: $vol"
 }
 
 # update_dwm_bar() {
@@ -47,7 +47,7 @@ notify_vol() {
 # }
 
 case "$1" in
-    "mut") mute_vol ;;
+    "mut") mute_vol && notify_vol ;;
     "dec") decrease_vol && notify_vol ;;
     "inc") increase_vol && notify_vol ;;
     "") ;;
