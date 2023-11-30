@@ -1,0 +1,10 @@
+$HOME/.scripts/batterychecklauncher.sh &
+$HOME/.scripts/compton.sh &
+$HOME/.scripts/display.sh &
+$HOME/.scripts/dropbox.sh &
+$HOME/.scripts/dunst.sh &
+$HOME/.scripts/dwmbar.sh &
+$HOME/.scripts/nm-applet.sh &
+$HOME/.scripts/remap.sh &
+$HOME/.scripts/syncthing.sh &
+$HOME/.scripts/touchpad.sh &
