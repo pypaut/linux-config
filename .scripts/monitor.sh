@@ -1,7 +1,8 @@
 #!/bin/bash
 
 INTERNAL="eDP-1"
-EXTERNAL="DP-2"
+INTERNAL_MODE="1920x1080"
+EXTERNAL=$(xrandr | grep connected | grep -v disconnected | grep -v ${INTERNAL} | awk '{ print $1 }')
 
 # Check file or create it
 if [ ! -f "/tmp/monitor_mode.dat" ] ; then
@@ -12,10 +13,12 @@ fi
 
 # Change monitor
 if [ $monitor_mode = "INT" ]; then
-    xrandr --output $EXTERNAL --mode 2560x1440 --output $INTERNAL --off && \
+    # Try 2560x1440, if fail then 1920x1080
+    ( xrandr --output $EXTERNAL --mode 2560x1440 --output $INTERNAL --off ||
+    xrandr --output $EXTERNAL --mode 1920x1080 --output $INTERNAL --off ) && \
     monitor_mode="EXT"
 else
-    xrandr --output $EXTERNAL --off --output $INTERNAL --mode 1920x1080 && \
+    xrandr --output $EXTERNAL --off --output $INTERNAL --mode $INTERNAL_MODE && \
     monitor_mode="INT"
 fi
 
