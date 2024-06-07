@@ -2,7 +2,7 @@
 set $scripts $HOME/.scripts
 
 # Startup
-exec_always --no-startup-id $HOME/.config/i3/autostart.sh
+exec_always --no-startup-id $HOME/.scripts/i3autostart.sh
 
 ###############
 # KEYBINDINGS #
@@ -45,11 +45,12 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+b split h
 bindsym $mod+v split v
 
-# Fullscreen
+# Windows
 bindsym $mod+f fullscreen toggle
+bindsym $mod+s sticky toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+g layout toggle split
 
@@ -137,9 +138,9 @@ bindsym $mod+Ctrl+0 [workspace=$workspace10] kill
 # You can assign workspaces to monitors here
 
 set $screen1 "eDP-1"
-set $screen2 "HDMI-2"
+set $screen2 "DP-2"
 
-workspace $workspace1 output $screen1
+workspace $workspace1 output $screen2
 workspace $workspace2 output $screen2
 workspace $workspace3 output $screen2
 workspace $workspace4 output $screen2
@@ -151,7 +152,7 @@ workspace $workspace9 output $screen1
 workspace $workspace10 output $screen1
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec $scripts/disenablebattcheck.sh
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -183,10 +184,11 @@ bindsym $mod+shift+x exec $scripts/i3lock.sh
 bindsym $mod+control+shift+x exec $scripts/suspend.sh
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec $scripts/sound.sh inc
-bindsym XF86AudioLowerVolume exec $scripts/sound.sh dec
-bindsym XF86AudioMute exec $scripts/sound.sh mut
-bindsym XF86AudioMicMute exec $scripts/mic.sh mut
+bindsym XF86AudioRaiseVolume exec $scripts/vol_i3blocks.sh inc
+bindsym XF86AudioLowerVolume exec $scripts/vol_i3blocks.sh dec
+bindsym XF86AudioMute exec $scripts/vol_i3blocks.sh mut
+# bindsym XF86AudioMicMute exec $scripts/mic.sh.sh mut
+bindsym XF86AudioMicMute exec $scripts/mic_i3blocks.sh
 
 # Pulse Audio controls bis
 bindsym $alt+q exec $scripts/sound.sh mut
@@ -211,7 +213,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Change display
-bindsym $mod+Shift+p exec $scripts/monitor.sh change
+bindsym $mod+Shift+p exec $scripts/display.sh change
 
 # Screenshot
 bindsym --release $mod+Shift+s exec $scripts/scrot.sh
@@ -291,10 +293,10 @@ set $win_darkgray #808080
 # client.urgent           $yellow         $yellow         $white      $yellow
 
 # Nord
-# client.focused          $dimblue        $dimblue        $white       $dimblue
-# client.unfocused        $bgblue         $bgblue         $white       $bgblue
-# client.focused_inactive $dimblue        $dimblue        $white       $dimblue
-# client.urgent           $fgblue         $fgblue         $white       $fgblue
+client.focused          $dimblue        $dimblue        $white       $dimblue
+client.unfocused        $bgblue         $bgblue         $white       $bgblue
+client.focused_inactive $dimblue        $dimblue        $white       $dimblue
+client.urgent           $fgblue         $fgblue         $white       $fgblue
 
 # Dracula
 # client.focused          $drac_comment   $drac_comment   $drac_foreground       $drac_comment
@@ -303,16 +305,16 @@ set $win_darkgray #808080
 # client.urgent           $drac_purple    $drac_purple    $drac_foreground       $drac_purple
 
 # Win95
-client.focused          $win_gray           $win_gray       $win_black      $win_gray
-client.unfocused        $win_darkgray       $win_darkgray   $win_black      $win_darkgray
-client.focused_inactive $win_gray           $win_gray       $win_black      $win_gray
-client.urgent           $win_blue           $win_blue       $win_white      $win_blue
+# client.focused          $win_gray           $win_gray       $win_black      $win_gray
+# client.unfocused        $win_darkgray       $win_darkgray   $win_black      $win_darkgray
+# client.focused_inactive $win_gray           $win_gray       $win_black      $win_gray
+# client.urgent           $win_blue           $win_blue       $win_white      $win_blue
 #                       border of title     border          text?           split indic
 
 bar {
         strip_workspace_numbers no
-        status_command i3status
-        position top
+        status_command i3blocks
+        position bottom
 
     colors {
         # Blacked out
@@ -324,12 +326,12 @@ bar {
         # urgent_workspace    $black      $black          $yellow
 
         # Nord
-        # background $bgblue
-        # separator  $dimblue
-        # #                   border      background      text
-        # focused_workspace   $dimblue    $dimblue        $white
-        # inactive_workspace  $bgblue     $bgblue         $white
-        # urgent_workspace    $fgblue     $bgblue         $white
+        background $bgblue
+        separator  $dimblue
+        #                   border      background      text
+        focused_workspace   $dimblue    $dimblue        $white
+        inactive_workspace  $bgblue     $bgblue         $white
+        urgent_workspace    $fgblue     $bgblue         $white
 
         # Dracula
         # background $drac_background
@@ -340,12 +342,12 @@ bar {
         # urgent_workspace    $drac_background    $drac_background    $drac_purple
 
         # Win95
-        background $win_darkgray
-        separator  $win_gray
-        #                   border              background          text
-        focused_workspace   $win_gray           $win_gray           $win_black
-        inactive_workspace  $win_darkgray       $win_darkgray       $win_black
-        urgent_workspace    $win_blue           $win_blue           $win_white
+        # background $win_darkgray
+        # separator  $win_gray
+        # #                   border              background          text
+        # focused_workspace   $win_gray           $win_gray           $win_black
+        # inactive_workspace  $win_darkgray       $win_darkgray       $win_black
+        # urgent_workspace    $win_blue           $win_blue           $win_white
     }
 
 }
@@ -357,6 +359,8 @@ for_window [class="^.*"] border pixel 3
 # Default state
 # for_window [class="st"] floating enable
 for_window [class="(?i)thunar"] floating enable
+for_window [class="(?i)thunar"] resize set 900 600
+for_window [class="(?i)alacritty"] floating enable
 # for_window [class="(?i)lutris"] floating enable
 
 # Set inner/outer gaps
