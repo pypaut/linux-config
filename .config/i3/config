@@ -200,9 +200,9 @@ bindsym $alt+x exec $scripts/mic.sh dec
 bindsym $alt+c exec $scripts/mic.sh inc
 
 # Cmus controls
-bindsym $mod+shift+v exec "cmus-remote --prev"
-bindsym $mod+shift+b exec "cmus-remote --pause"
-bindsym $mod+shift+n exec "cmus-remote --next"
+bindsym $mod+shift+v exec $scripts/music.sh prev
+bindsym $mod+shift+b exec $scripts/music.sh play_pause
+bindsym $mod+shift+n exec $scripts/music.sh next
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
