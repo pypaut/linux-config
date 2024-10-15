@@ -183,19 +183,23 @@ bindsym control+$alt+space exec $scripts/layout.sh change
 bindsym $mod+shift+x exec $scripts/i3lock.sh
 bindsym $mod+control+shift+x exec $scripts/suspend.sh
 
-# Pulse Audio controls
+# Volume (pulseaudio)
 bindsym XF86AudioRaiseVolume exec $scripts/vol_i3blocks.sh inc
 bindsym XF86AudioLowerVolume exec $scripts/vol_i3blocks.sh dec
 bindsym XF86AudioMute exec $scripts/vol_i3blocks.sh mut
 # bindsym XF86AudioMicMute exec $scripts/mic.sh.sh mut
 bindsym XF86AudioMicMute exec $scripts/mic_i3blocks.sh
 
-# Pulse Audio controls bis
-bindsym $alt+q exec $scripts/sound.sh mut
-bindsym $alt+w exec $scripts/sound.sh dec
-bindsym $alt+e exec $scripts/sound.sh inc
+# More volume
+bindsym $alt+q exec $scripts/vol_i3blocks.sh mut
+bindsym $alt+w exec $scripts/vol_i3blocks.sh dec
+bindsym $alt+e exec $scripts/vol_i3blocks.sh inc
 
-bindsym $alt+z exec $scripts/mic.sh mut
+bindsym $mod+shift+plus exec $scripts/vol_i3blocks.sh inc
+bindsym $mod+equal exec $scripts/vol_i3blocks.sh dec
+
+# Microphone
+bindsym $alt+z exec $scripts/mic_i3blocks.sh
 bindsym $alt+x exec $scripts/mic.sh dec
 bindsym $alt+c exec $scripts/mic.sh inc
 
