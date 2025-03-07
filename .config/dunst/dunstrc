@@ -2,19 +2,22 @@
     # Which monitor should the notifications be displayed on.
     monitor = 0
     follow = mouse
-    origin = bottom-center
-    width = 5000
     notification_limit = 1
     indicate_hidden = yes
     shrink = yes
-    transparency = 0
+    transparency = 10
     notification_height = 0  # Raised to the font if 0
     separator_height = 2  # Between notifications
-    padding = 0
-    horizontal_padding = 0
-    frame_width = 0
-    offset = 0x0
-    corner_radius = 0
+    # padding = 0
+    # horizontal_padding = 0
+    # offset = 0x0
+    corner_radius = 3
+    frame_width = 5
+    origin = top-center
+
+    # Bottom notif parameters
+    # origin = bottom-center
+    # width = 5000
 
 
     # Define a color for the separator.
@@ -38,7 +41,7 @@
     ### Text ###
 
     # font = Monospace 8
-    font = Iosevka 11
+    font = Iosevka 13
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -79,10 +82,10 @@
     #   %%  Literal %
     # Markup is allowed
 
-    format = "<b>%s</b> %b"
+    format = "<b>%s</b>\n%b"
     alignment = center
     vertical_alignment = center
-    show_age_threshold = 60
+    # show_age_threshold = 60
     word_wrap = yes
 
     # When word_wrap is set to no, specify where to make an ellipsis in long lines.
