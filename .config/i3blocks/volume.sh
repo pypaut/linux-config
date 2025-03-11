@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sink=$(pacmd list-sinks | awk '/\*/,EOF {print $3; exit}')
+sink='@DEFAULT_SINK@'
 mute_status=$(pactl get-sink-mute ${sink} | awk '{ print $2 }')
 vol=$(pactl get-sink-volume ${sink} | awk '{print $5}')
 
