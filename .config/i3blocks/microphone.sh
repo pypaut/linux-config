@@ -1,9 +1,7 @@
 #!/bin/bash
 
 
-# source="alsa_input.pci-0000_00_1f.3.analog-stereo"
-# source=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}') # idk but it works
-source=1 # internal
+source='@DEFAULT_SOURCE@' # internal
 # source=5 # external webcam
 
 mute_status=$(pactl get-source-mute ${source} | awk '{ print $2 }')
